@@ -1,0 +1,16 @@
+TY  - JOUR
+AU  - Zhang, Ruipeng
+AU  - Fan, Ziqing
+AU  - Yao, Jiangchao
+AU  - Zhang, Ya
+AU  - Wang, Yanfeng
+PY  - 2024
+DA  - 2024/12/16
+TI  - Fairness-guided federated training for generalization and personalization in cross-silo federated learning
+JO  - Frontiers of Information Technology & Electronic Engineering
+AB  - Cross-silo federated learning (FL), which benefits from relatively abundant data and rich computing power, is drawing increasing focus due to the significant transformations that foundation models (FMs) are instigating in the artificial intelligence field. The intensified data heterogeneity issue of this area, unlike that in cross-device FL, is caused mainly by substantial data volumes and distribution shifts across clients, which requires algorithms to comprehensively consider the personalization and generalization balance. In this paper, we aim to address the objective of generalized and personalized federated learning (GPFL) by enhancing the global model’s cross-domain generalization capabilities and simultaneously improving the personalization performance of local training clients. By investigating the fairness of performance distribution within the federation system, we explore a new connection between generalization gap and aggregation weights established in previous studies, culminating in the fairness-guided federated training for generalization and personalization (FFT-GP) approach. FFT-GP integrates a fairness-aware aggregation (FAA) approach to minimize the generalization gap variance among training clients and a meta-learning strategy that aligns local training with the global model’s feature distribution, thereby balancing generalization and personalization. Our extensive experimental results demonstrate FFT-GP’s superior efficacy compared to existing models, showcasing its potential to enhance FL systems across a variety of practical scenarios.
+SN  - 2095-9230
+UR  - https://doi.org/10.1631/FITEE.2400279
+DO  - 10.1631/FITEE.2400279
+ID  - Zhang2024
+ER  - 
