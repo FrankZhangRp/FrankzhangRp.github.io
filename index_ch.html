@@ -1,19 +1,33 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title>Zhang Ruipeng</title>
-  
+  <title>张瑞鹏 - Zhang Ruipeng</title>
+
   <meta name="author" content="张瑞鹏">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#about" class="nav-link">关于</a>
+      <a href="#news" class="nav-link">动态</a>
+      <a href="#conference" class="nav-link">会议论文</a>
+      <a href="#journal" class="nav-link">期刊论文</a>
+      <a href="#awards" class="nav-link">荣誉</a>
+      <a href="#services" class="nav-link">服务</a>
+    </div>
+  </nav>
+
+  <table class="main-container" style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
+        <!-- 关于部分 -->
+        <section id="about">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr style="padding:0px">
             <td style="padding:2.5%;width:63%;vertical-align:middle">
@@ -22,95 +36,138 @@
               </p>
               <p>我目前是上海交通大学医学院附属第六人民医院放射科助理研究员。我于2024年6月获得<a href="https://www.sjtu.edu.cn/">上海交通大学</a>信息与通信工程博士学位，在<a href="https://cmic.sjtu.edu.cn/EN/Default.aspx">协同创新中心</a> <a href="https://mediabrain.sjtu.edu.cn/">MediaBrain</a>实验室师从<a href="https://mediabrain.sjtu.edu.cn/yazhang/">张娅教授</a>。
               </p>
-              <p style="text-align:center">
-                <a href="mailto:zhangrp@sjtu.edu.cn">邮箱</a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?user=m7RzJxwAAAAJ&hl=zh-CN&oi=ao">谷歌学术</a> &nbsp/&nbsp
-                <a href="https://github.com/FrankZhangRp/">Github</a> &nbsp/&nbsp
-                <a href="./index.html">Homepage in English (英文主页)</a>
-              </p>
+              <div class="contact-links">
+                <a href="mailto:zhangrp@sjtu.edu.cn">邮箱</a>
+                <a href="https://scholar.google.com/citations?user=m7RzJxwAAAAJ&hl=zh-CN&oi=ao">谷歌学术</a>
+                <a href="https://github.com/FrankZhangRp/">Github</a>
+                <a href="./index.html">English</a>
+              </div>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/my_photo.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/my_photo.jpg" class="hoverZoomLink"></a>
+              <a href="images/my_photo.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/my_photo.jpg" class="hoverZoomLink profile-photo"></a>
             </td>
           </tr>
         </tbody></table>
+        </section>
 
-        <!-- 研究兴趣部分 -->
+        <!-- 研究兴趣与引用统计部分 -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:50%;vertical-align:top">
               <heading>研究方向</heading>
               <p>
                 <ul>
-                    <li>领域泛化（domain generalization）</li>
-                    <li>联邦学习（federated learning）</li>
-                    <li>医学影像处理（medical image analysis）</li>
+                    <li>领域泛化（Domain Generalization）</li>
+                    <li>联邦学习（Federated Learning）</li>
+                    <li>医学影像处理（Medical Image Analysis）</li>
                 </ul>
               </p>
             </td>
             <td style="padding:20px;width:50%;vertical-align:top">
               <heading>谷歌学术引用统计</heading>
-              <div id="citationChart">
-                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                <script type="text/javascript">
-                  google.charts.load('current', {'packages':['corechart']});
-                  google.charts.setOnLoadCallback(drawChart);
-                  
-                  function drawChart() {
-                    // 尝试从Google Scholar获取数据
-                    fetch('https://scholar.google.com/citations?user=m7RzJxwAAAAJ')
-                      .then(response => response.text())
-                      .then(html => {
-                        // 解析HTML获取引用数据
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, 'text/html');
-                        const citations = Array.from(doc.querySelectorAll('.gsc_g_al')).map(el => parseInt(el.textContent));
-                        const years = Array.from(doc.querySelectorAll('.gsc_g_t')).map(el => el.textContent);
-                        
-                        const chartData = [['Year', 'Citations']];
-                        for(let i = 0; i < years.length; i++) {
-                          chartData.push([years[i], citations[i]]);
-                        }
-                        
-                        drawChartWithData(chartData);
-                      })
-                      .catch(error => {
-                        // 如果获取失败,使用默认数据
-                        const defaultData = [
-                          ['Year', 'Citations'],
-                          ['2019', 2],
-                          ['2020', 2], 
-                          ['2021', 20],
-                          ['2022', 81],
-                          ['2023', 211],
-                          ['2024', 407]
-                        ];
-                        drawChartWithData(defaultData);
-                      });
-                  }
+              <div class="citation-stats">
+                <a href="https://scholar.google.com/citations?user=m7RzJxwAAAAJ&hl=zh-CN" target="_blank" class="scholar-badge">
+                  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fcse.bth.se%2F~fer%2Fgooglescholar-api%2Fgooglescholar.php%3Fuser%3Dm7RzJxwAAAAJ&query=%24.citedby&logo=googlescholar&label=总引用&style=for-the-badge&color=4285f4" alt="Google Scholar Citations" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                  <span class="fallback-stats" style="display:none;">总引用: 700+</span>
+                </a>
+                <div id="citationChart"></div>
+              </div>
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript">
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
 
-                  function drawChartWithData(chartData) {
-                    var data = google.visualization.arrayToDataTable(chartData);
-                    
-                    var options = {
-                      title: '每年引用次数',
-                      legend: { position: 'none' },
-                      vAxis: { minValue: 0 },
-                      colors: ['#4285f4']
-                    };
-                    
-                    var chart = new google.visualization.ColumnChart(document.getElementById('citationChart'));
-                    chart.draw(data, options);
-                  }
-                </script>
-                <div style="width: 100%; height: 200px;"></div>
+                function drawChart() {
+                  // 引用数据 - 定期更新
+                  var data = google.visualization.arrayToDataTable([
+                    ['年份', '引用次数', { role: 'style' }],
+                    ['2021', 20, '#e8f0fe'],
+                    ['2022', 81, '#d2e3fc'],
+                    ['2023', 211, '#a8c7fa'],
+                    ['2024', 407, '#7baaf7'],
+                    ['2025', 120, '#4285f4']
+                  ]);
+
+                  var options = {
+                    legend: { position: 'none' },
+                    chartArea: { width: '85%', height: '75%' },
+                    vAxis: {
+                      minValue: 0,
+                      textStyle: { fontSize: 11, color: '#5f6368' },
+                      gridlines: { color: '#f1f3f4' }
+                    },
+                    hAxis: {
+                      textStyle: { fontSize: 11, color: '#5f6368' }
+                    },
+                    bar: { groupWidth: '70%' },
+                    backgroundColor: 'transparent',
+                    animation: {
+                      startup: true,
+                      duration: 1000,
+                      easing: 'out'
+                    }
+                  };
+
+                  var chart = new google.visualization.ColumnChart(document.getElementById('citationChart'));
+                  chart.draw(data, options);
+                }
+
+                // 窗口大小改变时重绘图表
+                window.addEventListener('resize', drawChart);
+              </script>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <!-- 动态部分 -->
+        <section id="news">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>最新动态</heading>
+              <div class="news-container" style="margin-top: 15px;">
+                <!-- 可见新闻 (最新5条) -->
+                <div class="news-item news-highlight">
+                  <span class="news-date">[2026年1月]</span> 一篇论文被 <strong><em>NPJ Digital Medicine</em></strong> 接收 (SCI Q1, IF=15.2)！[共同一作]
+                </div>
+                <div class="news-item">
+                  <span class="news-date">[2024年12月]</span> 一篇论文被 <strong>Frontiers of Information Technology & Electronic Engineering</strong> 接收！
+                </div>
+                <div class="news-item">
+                  <span class="news-date">[2024年3月]</span> 一篇论文被 <strong><em>IEEE Transactions on Medical Imaging</em></strong> 接收！
+                </div>
+                <div class="news-item">
+                  <span class="news-date">[2024年1月]</span> 一篇论文被 <strong>ICLR 2024</strong> 接收！
+                </div>
+                <div class="news-item">
+                  <span class="news-date">[2023年10月]</span> 一篇论文被 <strong><em>Transactions on Machine Learning Research</em> (TMLR)</strong> 接收！
+                </div>
+
+                <!-- 折叠的新闻 -->
+                <div id="moreNews" class="collapsed-news">
+                  <div class="news-item">
+                    <span class="news-date">[2023年9月]</span> 一篇论文被 <strong>NeurIPS 2023</strong> 接收！
+                  </div>
+                  <div class="news-item">
+                    <span class="news-date">[2023年6月]</span> 一篇论文被 <strong>MICCAI 2023</strong> 接收！
+                  </div>
+                </div>
+
+                <!-- 展开更多按钮 -->
+                <button class="show-more-btn" onclick="toggleNews()">
+                  <span id="showMoreText">展开更多</span>
+                  <svg id="showMoreIcon" class="chevron-icon" viewBox="0 0 24 24" width="16" height="16">
+                    <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                  </svg>
+                </button>
               </div>
             </td>
           </tr>
         </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-				
-        <!-- publication部分  -->
+        </section>
+
+        <!-- 会议论文部分 -->
+        <section id="conference">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
           <td style="padding:20px;width:100%;vertical-align:middle">
@@ -118,8 +175,8 @@
           </td>
         </tr>
       </tbody></table>
-      
-      
+
+
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <!-- ICLR 2024 -->
         <tr>
@@ -137,10 +194,10 @@
             <br>
             <em>The Twelfth International Conference on Learning Representations (ICLR)</em>, 2024
             <br>
-            <a href="https://github.com/MediaBrain-SJTU/DISAM">project page</a> | 
-            <a href="nan">poster</a> | 
-            <a href="nan">video</a> | 
-            <a href="https://openreview.net/pdf?id=I4wB3HA3dJ">pdf</a> | 
+            <a href="https://github.com/MediaBrain-SJTU/DISAM">project page</a> |
+            <a href="nan">poster</a> |
+            <a href="nan">video</a> |
+            <a href="https://openreview.net/pdf?id=I4wB3HA3dJ">pdf</a> |
             <a href="data/iclr2024_disam.bib">bibtex</a>
           </td>
         </tr>
@@ -173,18 +230,18 @@
             <br>
             <em>International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) </em>, 2023
             <br>
-            <a href="https://github.com/MediaBrain-SJTU/GPFL-GRACE">project page</a> | 
-            <a>poster</a> | 
+            <a href="https://github.com/MediaBrain-SJTU/GPFL-GRACE">project page</a> |
+            <a>poster</a> |
             <!-- <a href="https://www.youtube.com/watch?v=EESJrJGCSR4">video</a> |  -->
-            <a href="https://link.springer.com/chapter/10.1007/978-3-031-43898-1_2">pdf</a> | 
-            <a>supp</a> | 
+            <a href="https://link.springer.com/chapter/10.1007/978-3-031-43898-1_2">pdf</a> |
+            <a>supp</a> |
             <a href="data/miccai2023_grace.bib">bibtex</a>
           </td>
         </tr>
       <!-- </tbody></table> -->
 
             <!-- CVPR 2023 FedDG -->
-            <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody></tbody> -->              
+            <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody></tbody> -->
               <tr>
                 <td style="padding: 20px; width:25%; vertical-align: middle">
                   <div class="one">
@@ -200,17 +257,17 @@
                 <br>
                 <em>IEEE/CVF Computer Vision and Pattern Recognition Conference (CVPR)</em>, 2023
                 <br>
-                <a href="https://github.com/MediaBrain-SJTU/FedDG-GA">project page</a> | 
-                <a href="https://github.com/MediaBrain-SJTU/FedDG-GA/imgs/FedDG-new-5120.png">poster</a> | 
-                <a href="https://www.bilibili.com/video/BV1Po4y137Pn/?vd_source=f609ec779c874a09ed3a9526d55c1f98">video</a> | 
-                <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Federated_Domain_Generalization_With_Generalization_Adjustment_CVPR_2023_paper.pdf">pdf</a> | 
-                <a href="https://openaccess.thecvf.com/content/CVPR2023/supplemental/Zhang_Federated_Domain_Generalization_CVPR_2023_supplemental.pdf">supp</a> | 
+                <a href="https://github.com/MediaBrain-SJTU/FedDG-GA">project page</a> |
+                <a href="https://github.com/MediaBrain-SJTU/FedDG-GA/imgs/FedDG-new-5120.png">poster</a> |
+                <a href="https://www.bilibili.com/video/BV1Po4y137Pn/?vd_source=f609ec779c874a09ed3a9526d55c1f98">video</a> |
+                <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Federated_Domain_Generalization_With_Generalization_Adjustment_CVPR_2023_paper.pdf">pdf</a> |
+                <a href="https://openaccess.thecvf.com/content/CVPR2023/supplemental/Zhang_Federated_Domain_Generalization_CVPR_2023_supplemental.pdf">supp</a> |
                 <a href="data/cvpr2023_feddg.bib">bibtex</a>
               </td>
             </tr>
           <!-- </tbody></table> -->
 
-            
+
           <!-- NeurIPS 2023 FedGELA -->
             <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody></tbody> -->
               <tr>
@@ -228,16 +285,16 @@
                   <br>
                   <em>Thirty-seventh Conference on Neural Information Processing Systems (NeurIPS)</em>, 2023
                   <br>
-                  <a href="https://github.com/MediaBrain-SJTU/FedGELA">project page</a> | 
+                  <a href="https://github.com/MediaBrain-SJTU/FedGELA">project page</a> |
                   <!-- <a href="https://github.com/MediaBrain-SJTU/FedDG-GA/imgs/FedDG-new-5120.png">poster</a> |  -->
                   <!-- <a href="https://www.bilibili.com/video/BV1Po4y137Pn/?vd_source=f609ec779c874a09ed3a9526d55c1f98">video</a> |  -->
-                  <a href="https://openreview.net/pdf?id=wwmKVO8bsR">pdf</a> | 
+                  <a href="https://openreview.net/pdf?id=wwmKVO8bsR">pdf</a> |
                   <!-- <a href="https://openaccess.thecvf.com/content/CVPR2023/supplemental/Zhang_Federated_Domain_Generalization_CVPR_2023_supplemental.pdf">supp</a> |  -->
                   <a href="data/neurips2023_fedgela.bib">bibtex</a>
                 </td>
               </tr>
 
-            
+
             <!-- ISBI 2022 SemiDG -->
             <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody></tbody> -->
               <tr onmouseout="isbi2022_stop()" onmouseover="isbi2022_start()">
@@ -251,7 +308,7 @@
                     function isbi2022_start() {
                       document.getElementById('isbi2022_image').style.opacity = "1";
                     }
-    
+
                     function isbi2022_stop() {
                       document.getElementById('isbi2022_image').style.opacity = "0";
                     }
@@ -267,13 +324,13 @@
                   <br>
                   <em>IEEE International Symposium on Biomedical Imaging (ISBI) </em>, 2022
                   <br>
-                  <a href="data/ISBI poster.pdf">poster</a> | 
-                  <a href="data/ISBIvideo.mp4">video</a> | 
-                  <a href="https://ieeexplore.ieee.org/abstract/document/9761561">pdf</a> | 
+                  <a href="data/ISBI poster.pdf">poster</a> |
+                  <a href="data/ISBIvideo.mp4">video</a> |
+                  <a href="https://ieeexplore.ieee.org/abstract/document/9761561">pdf</a> |
                   <a href="data/isbi2022_semidg.bib">bibtex</a>
                 </td>
               </tr>
-            
+
             <!-- CVPR 2021 FACT -->
             <tr onmouseout="cvpr2021_stop()" onmouseover="cvpr2021_start()">
               <td style="padding:20px;width:25%;vertical-align:middle">
@@ -286,7 +343,7 @@
                   function cvpr2021_start() {
                     document.getElementById('cvpr2021_image').style.opacity = "1";
                   }
-  
+
                   function cvpr2021_stop() {
                     document.getElementById('cvpr2021_image').style.opacity = "0";
                   }
@@ -302,9 +359,9 @@
                 <br>
                 <em>IEEE/CVF Computer Vision and Pattern Recognition Conference (CVPR)</em>, 2021
                 <br>
-                <a href="https://github.com/MediaBrain-SJTU/FACT">project page</a> | 
-                <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xu_A_Fourier-Based_Framework_for_Domain_Generalization_CVPR_2021_paper.pdf">pdf</a> | 
-                <a href="https://openaccess.thecvf.com/content/CVPR2021/supplemental/Xu_A_Fourier-Based_Framework_CVPR_2021_supplemental.pdf">supp</a> | 
+                <a href="https://github.com/MediaBrain-SJTU/FACT">project page</a> |
+                <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xu_A_Fourier-Based_Framework_for_Domain_Generalization_CVPR_2021_paper.pdf">pdf</a> |
+                <a href="https://openaccess.thecvf.com/content/CVPR2021/supplemental/Xu_A_Fourier-Based_Framework_CVPR_2021_supplemental.pdf">supp</a> |
                 <a href="data/cvpr2021_fact.bib">bibtex</a>
               </td>
             </tr>
@@ -326,8 +383,8 @@
                   <br>
                   <em>IEEE/CVF Computer Vision and Pattern Recognition Conference Workshops (CVPRW)</em>, 2023
                   <br>
-                  <a href="https://openaccess.thecvf.com/content/CVPR2023W/L3D-IVU/papers/Xu_SimDE_A_Simple_Domain_Expansion_Approach_for_Single-Source_Domain_Generalization_CVPRW_2023_paper.pdf">pdf</a> | 
-                  <a href="https://openaccess.thecvf.com/content/CVPR2023W/L3D-IVU/supplemental/Xu_SimDE_A_Simple_CVPRW_2023_supplemental.pdf">supp</a> | 
+                  <a href="https://openaccess.thecvf.com/content/CVPR2023W/L3D-IVU/papers/Xu_SimDE_A_Simple_Domain_Expansion_Approach_for_Single-Source_Domain_Generalization_CVPRW_2023_paper.pdf">pdf</a> |
+                  <a href="https://openaccess.thecvf.com/content/CVPR2023W/L3D-IVU/supplemental/Xu_SimDE_A_Simple_CVPRW_2023_supplemental.pdf">supp</a> |
                   <a href="data/cvpr2023_simde.bib">bibtex</a>
                 </td>
               </tr>
@@ -349,15 +406,18 @@
                 <br>
                 <em>European Conference on Computer Vision Workshops (ECCVW) </em>, 2022 <b> (Best Long Paper)</b>
                 <br>
-                <a href="https://link.springer.com/chapter/10.1007/978-3-031-25085-9_17">pdf</a> | 
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-25085-9_17">pdf</a> |
                 <a href="data/eccv2022_dcn.bib">bibtex</a>
               </td>
             </tr>
 
-            
-            
-          </tbody></table>
 
+
+          </tbody></table>
+      </section>
+
+      <!-- 期刊论文部分 -->
+      <section id="journal">
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
         <td style="padding:20px;width:100%;vertical-align:middle">
@@ -383,7 +443,7 @@
         <br>
         <em>Frontiers of Information Technology & Electronic Engineering</em>, 2024
         <br>
-        <a href="https://link.springer.com/article/10.1631/FITEE.2400279">pdf</a> | 
+        <a href="https://link.springer.com/article/10.1631/FITEE.2400279">pdf</a> |
         <a href="data/ftiee2024_fftgp.ris">bibtex</a>
       </td>
     </tr>
@@ -404,13 +464,13 @@
         <br>
         <em>IEEE Transactions on Medical Imaging</em>, 2024
         <br>
-        <a href="https://link.springer.com/article/10.1631/FITEE.2400279">pdf</a> | 
-        <a href="https://github.com/Elfenreigen/UniChest">code</a> | 
-        <a href="https://tianjiedai.github.io/unichest/">project page</a> | 
+        <a href="https://link.springer.com/article/10.1631/FITEE.2400279">pdf</a> |
+        <a href="https://github.com/Elfenreigen/UniChest">code</a> |
+        <a href="https://tianjiedai.github.io/unichest/">project page</a> |
         <a href="https://tianjiedai.github.io/unichest/resources/bibtex.txt">bibtex</a>
       </td>
     </tr>
-    
+
       <!-- TMM 2023 FADH -->
       <tr>
         <td style="padding:20px;width:25%;vertical-align:middle">
@@ -427,13 +487,13 @@
           <br>
           <em>IEEE Transactions on Multimedia</em>, 2023 &nbsp;&nbsp;&nbsp;<strong>SCI 1区, CCF-B</strong>
           <br>
-          <a href="https://ieeexplore.ieee.org/abstract/document/10073578/">pdf</a> | 
+          <a href="https://ieeexplore.ieee.org/abstract/document/10073578/">pdf</a> |
           <a href="data/tmm2023_fadh.bib">bibtex</a>
         </td>
       </tr>
-  
+
       <!-- PR 2023 FACT+extension -->
-  
+
       <tr>
         <td style="padding:20px;width:25%;vertical-align:middle">
           <div class="one">
@@ -449,16 +509,16 @@
           <br>
           <em>Pattern Recognition</em>, 2023 &nbsp;&nbsp;&nbsp;<strong>SCI 1区, CCF-B</strong>
           <br>
-          <a href="https://www.sciencedirect.com/science/article/pii/S0031320323001747">pdf</a> | 
+          <a href="https://www.sciencedirect.com/science/article/pii/S0031320323001747">pdf</a> |
           <a href="data/pr2023_fact.bib">bibtex</a>
         </td>
       </tr>
-  
-    </tbody></table>
 
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    </tbody></table>
+    </section>
 
       <!-- 获奖部分 -->
+      <section id="awards">
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
           <td style="padding:20px;width:100%;vertical-align:middle">
@@ -475,10 +535,13 @@
           </td>
         </tr>
       </tbody></table>
+      </section>
+
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-      
+
       <!-- 学术服务部分 -->
+      <section id="services">
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
         <td style="padding:20px;width:100%;vertical-align:middle">
@@ -491,10 +554,31 @@
         </td>
       </tr>
     </tbody></table>
+    </section>
+
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       </td>
     </tr>
   </table>
+
+  <!-- JavaScript for News Toggle -->
+  <script>
+    function toggleNews() {
+      var moreNews = document.getElementById('moreNews');
+      var showMoreText = document.getElementById('showMoreText');
+      var showMoreIcon = document.getElementById('showMoreIcon');
+
+      if (moreNews.classList.contains('show')) {
+        moreNews.classList.remove('show');
+        showMoreText.textContent = '展开更多';
+        showMoreIcon.style.transform = 'rotate(0deg)';
+      } else {
+        moreNews.classList.add('show');
+        showMoreText.textContent = '收起';
+        showMoreIcon.style.transform = 'rotate(180deg)';
+      }
+    }
+  </script>
 </body>
 
 </html>
