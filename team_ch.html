@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="AI4Rad Lab">
+  <title>AI4Rad Lab · 团队成员</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>">
+  <style>
+    :root {
+      --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155;
+      --slate-600: #475569; --slate-500: #64748b; --slate-400: #94a3b8;
+      --slate-300: #cbd5e1; --slate-200: #e2e8f0; --slate-100: #f1f5f9; --slate-50: #f8fafc;
+      --blue-600: #2563eb; --blue-500: #3b82f6; --blue-400: #60a5fa;
+      --blue-300: #93c5fd; --blue-100: #dbeafe; --blue-50: #eff6ff;
+      --teal-600: #0d9488; --teal-500: #14b8a6; --teal-400: #2dd4bf;
+      --amber-500: #f59e0b; --emerald-500: #10b981;
+      --text-primary: var(--slate-900); --text-secondary: var(--slate-600); --text-muted: var(--slate-500);
+      --bg-page: #fafbfc; --bg-card: #ffffff; --border: var(--slate-200); --border-light: var(--slate-100);
+      --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px; --radius-xl: 28px;
+      --shadow-sm: 0 1px 2px rgba(15,23,42,0.04);
+      --shadow-md: 0 4px 12px rgba(15,23,42,0.06);
+      --shadow-lg: 0 12px 28px rgba(15,23,42,0.08);
+      --nav-height: 64px; --content-max: 1040px;
+      --font-body: 'Outfit', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      --font-display: 'Noto Serif SC', 'Fraunces', 'PingFang SC', serif;
+      --nav-bg: rgba(255,255,255,0.88);
+    }
+    [data-theme="dark"] {
+      --text-primary: #e2e8f0; --text-secondary: #94a3b8; --text-muted: #64748b;
+      --bg-page: #0b1120; --bg-card: #1a2332; --border: #2d3a4a; --border-light: #243044;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+      --shadow-lg: 0 12px 28px rgba(0,0,0,0.5);
+      --nav-bg: rgba(11,17,32,0.9);
+      --blue-50: #1a2332; --blue-100: #1e2d42;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 32px); }
+    body {
+      font-family: var(--font-body); font-size: 15px; line-height: 1.8; color: var(--text-primary);
+      background: var(--bg-page); -webkit-font-smoothing: antialiased;
+      font-feature-settings: "kern","liga","tnum"; padding-top: var(--nav-height);
+    }
+    a { color: var(--blue-600); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--teal-600); }
+    ::selection { background: rgba(59,130,246,0.18); }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height);
+      background: var(--nav-bg); backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000; display: flex; align-items: center; justify-content: center;
+    }
+    .nav__inner { display: flex; align-items: center; gap: 12px; max-width: var(--content-max); width: 100%; padding: 0 24px; }
+    .nav__brand { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-right: auto; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px; }
+    .nav__brand-dot { width: 10px; height: 10px; background: var(--blue-600); border-radius: 3px; transform: rotate(45deg); }
+    .nav__links { display: flex; align-items: center; gap: 4px; }
+    .nav__link { padding: 6px 16px; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary); border-radius: 999px; transition: all 0.2s; letter-spacing: 0.01em; }
+    .nav__link:hover { background: var(--blue-50); color: var(--text-primary); }
+    .nav__link.active { background: var(--blue-600); color: #fff; }
+    .nav__link--home { padding: 6px 16px; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary); border-radius: 999px; transition: all 0.2s; display: flex; align-items: center; gap: 5px; border: 1px solid var(--border); }
+    .nav__link--home:hover { background: var(--blue-50); border-color: var(--blue-600); color: var(--blue-600); }
+    .nav__theme-btn { background: none; border: none; cursor: pointer; font-size: 1.2rem; padding: 4px 8px; border-radius: var(--radius-sm); transition: background 0.2s; line-height: 1; margin-left: 8px; }
+    .nav__theme-btn:hover { background: var(--blue-50); }
+
+    .wrapper { max-width: var(--content-max); margin: 0 auto; padding: 0 24px; }
+
+    .team-hero { padding: 64px 0 48px; text-align: center; }
+    .team-hero__badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; border: 1px solid var(--blue-300); border-radius: 999px; font-size: 0.78rem; font-weight: 600; color: var(--blue-600); margin-bottom: 24px; }
+    [data-theme="dark"] .team-hero__badge { border-color: #2d4a77; color: var(--blue-400); }
+    .team-hero__badge-dot { width: 7px; height: 7px; background: var(--blue-600); border-radius: 50%; }
+    .team-hero__title { font-family: var(--font-display); font-size: 3.25rem; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; background: linear-gradient(135deg, var(--slate-900) 0%, #1e40af 50%, var(--teal-600) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+    [data-theme="dark"] .team-hero__title { background: linear-gradient(135deg, #e2e8f0 0%, #60a5fa 50%, #2dd4bf 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .team-hero__subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 640px; margin: 0 auto; line-height: 1.7; }
+    .team-hero__dept { margin-top: 20px; font-size: 0.85rem; color: var(--text-muted); font-weight: 400; }
+
+    .team-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 0 0 40px; }
+    .team-stat { background: var(--bg-card); border-radius: var(--radius-lg); padding: 24px 20px; text-align: center; border: 1px solid var(--border); transition: all 0.3s; }
+    .team-stat:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .team-stat__number { font-family: var(--font-display); font-size: 2.25rem; font-weight: 700; background: linear-gradient(135deg, var(--blue-600), var(--teal-600)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .team-stat__label { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; font-weight: 500; }
+
+    .section-label { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .section-label__text { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+    .section-label__line { flex: 1; height: 1px; background: var(--border); }
+
+    .leader-card { display: grid; grid-template-columns: 120px 1fr; gap: 32px; align-items: center; padding: 36px; background: var(--bg-card); border-radius: var(--radius-xl); border: 1px solid var(--border); position: relative; overflow: hidden; transition: box-shadow 0.3s; }
+    .leader-card:hover { box-shadow: var(--shadow-lg); }
+    .leader-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--blue-600), var(--teal-600)); }
+    .leader-card__avatar { width: 120px; height: 120px; border-radius: 50%; overflow: hidden; background: var(--slate-100); border: 3px solid var(--blue-600); flex-shrink: 0; }
+    .leader-card__avatar img { width: 100%; height: 100%; }
+    .leader-card__name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); }
+    .leader-card__name-en { font-weight: 400; font-size: 0.95rem; color: var(--text-secondary); margin-left: 10px; font-family: var(--font-body); }
+    .leader-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+    .leader-card__tag { padding: 3px 12px; background: var(--blue-50); color: var(--blue-600); border-radius: 999px; font-size: 0.7rem; font-weight: 600; }
+    [data-theme="dark"] .leader-card__tag { background: #1e2d42; color: var(--blue-400); }
+    .leader-card__meta { font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; }
+
+    .pi-card { display: grid; grid-template-columns: 96px 1fr; gap: 28px; align-items: center; padding: 28px 32px; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border); transition: box-shadow 0.3s; }
+    .pi-card:hover { box-shadow: var(--shadow-md); }
+    .pi-card__avatar { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; background: var(--slate-100); border: 2px solid var(--blue-500); flex-shrink: 0; }
+    .pi-card__avatar img { width: 100%; height: 100%; }
+    .pi-card__name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text-primary); }
+    .pi-card__name-en { font-weight: 400; font-size: 0.88rem; color: var(--text-secondary); margin-left: 8px; font-family: var(--font-body); }
+    .pi-card__meta { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+
+    .researcher-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+    .member-card { display: flex; align-items: center; gap: 16px; padding: 18px 22px; background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-light); transition: all 0.25s; }
+    .member-card:hover { box-shadow: var(--shadow-sm); transform: translateY(-2px); border-color: var(--border); }
+    .member-card__avatar { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; background: var(--slate-100); flex-shrink: 0; }
+    .member-card__avatar img { width: 100%; height: 100%; }
+    .member-card__info { flex: 1; min-width: 0; }
+    .member-card__name { font-weight: 600; font-size: 0.92rem; color: var(--text-primary); }
+    .member-card__name-en { font-weight: 400; font-size: 0.78rem; color: var(--text-secondary); }
+    .member-card__meta { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; line-height: 1.5; }
+
+    .student-category { margin-top: 36px; }
+    .student-category__sub { margin-bottom: 24px; }
+    .student-category__sub-label { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; padding-left: 4px; }
+    .member-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 10px; }
+
+    .alumni-section { opacity: 0.82; }
+    .alumni-section .member-card__avatar { opacity: 0.7; }
+
+    .footer { margin-top: 64px; padding: 32px 0 40px; border-top: 1px solid var(--border); text-align: center; }
+    .footer__links { display: flex; justify-content: center; gap: 24px; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer__links a { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
+    .footer__links a:hover { color: var(--blue-600); }
+    .footer__meta { font-size: 0.75rem; color: var(--slate-400); margin-top: 4px; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      :root { --nav-height: 52px; }
+      .nav__brand { font-size: 0.95rem; }
+      .nav__link, .nav__link--home { font-size: 0.72rem; padding: 5px 10px; }
+      .nav__links { gap: 2px; }
+      .team-hero { padding: 40px 0 32px; }
+      .team-hero__title { font-size: 2.25rem; }
+      .team-hero__subtitle { font-size: 0.95rem; }
+      .team-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .leader-card { grid-template-columns: 1fr; gap: 20px; text-align: center; padding: 28px 24px; }
+      .leader-card__avatar { margin: 0 auto; width: 96px; height: 96px; }
+      .leader-card::before { width: 100%; height: 4px; }
+      .pi-card { grid-template-columns: 1fr; gap: 16px; text-align: center; padding: 24px 20px; }
+      .pi-card__avatar { margin: 0 auto; width: 80px; height: 80px; }
+      .researcher-grid { grid-template-columns: 1fr; }
+      .member-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 1200px) { .wrapper { max-width: 1100px; } }
+    @media print { body { background: #fff; padding-top: 0; } .nav { display: none; } .reveal { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <span class="nav__brand"><span class="nav__brand-dot"></span>AI4Rad 实验室</span>
+      <div class="nav__links">
+        <a href="./index_ch.html" class="nav__link--home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          返回主页
+        </a>
+        <a href="#researchers" class="nav__link">研究人员</a>
+        <a href="#phd" class="nav__link">博士</a>
+        <a href="#master" class="nav__link">硕士</a>
+        <a href="#alumni" class="nav__link">毕业致谢</a>
+      </div>
+      <button class="nav__theme-btn" id="themeToggle" aria-label="切换深色模式" title="切换深色模式">🌙</button>
+    </div>
+  </nav>
+
+  <main class="wrapper">
+    <section class="team-hero reveal">
+      <div class="team-hero__badge">
+        <span class="team-hero__badge-dot"></span>
+        放射介入科 · 上海市第六人民医院 · 上海交通大学医学院
+      </div>
+      <h1 class="team-hero__title">AI4Rad 实验室</h1>
+      <p class="team-hero__subtitle">医学影像人工智能研究团队</p>
+      <p class="team-hero__dept">上海交通大学医学院附属第六人民医院 · 放射介入科</p>
+    </section>
+
+    <div class="team-stats reveal">
+      <div class="team-stat"><div class="team-stat__number">21</div><div class="team-stat__label">团队成员</div></div>
+      <div class="team-stat"><div class="team-stat__number">3</div><div class="team-stat__label">研究方向</div></div>
+      <div class="team-stat"><div class="team-stat__number">12+</div><div class="team-stat__label">发表论文</div></div>
+      <div class="team-stat"><div class="team-stat__number">3</div><div class="team-stat__label">合作院校</div></div>
+    </div>
+
+    <div class="section-label reveal">
+      <span class="section-label__text">团队负责人</span>
+      <span class="section-label__line"></span>
+    </div>
+    <div class="leader-card reveal">
+      <div class="leader-card__avatar">
+        <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YuehuaLi&backgroundColor=b6e3f4" alt="李跃华" loading="lazy">
+      </div>
+      <div>
+        <div class="leader-card__name">李跃华<span class="leader-card__name-en">Yuehua Li</span></div>
+        <div class="leader-card__tags">
+          <span class="leader-card__tag">团队负责人</span>
+          <span class="leader-card__tag">PhD · MD</span>
+          <span class="leader-card__tag">主任医师</span>
+          <span class="leader-card__tag">第六人民医院副院长</span>
+        </div>
+        <div class="leader-card__meta">
+          上海交通大学特聘教授 · 主任医师<br>上海市第六人民医院副院长 · 放射介入科
+        </div>
+      </div>
+    </div>
+
+    <div id="researchers" class="section-label reveal" style="margin-top:40px;">
+      <span class="section-label__text">课题组长</span>
+      <span class="section-label__line"></span>
+    </div>
+    <div class="pi-card reveal">
+      <div class="pi-card__avatar">
+        <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=RuipengZhang&backgroundColor=c0aede" alt="张瑞鹏" loading="lazy">
+      </div>
+      <div>
+        <div class="pi-card__name">张瑞鹏<span class="pi-card__name-en">Ruipeng Zhang</span></div>
+        <div class="pi-card__meta">课题组长 · 放射介入科助理研究员<br>上海交通大学博士（2024） · 医学VLM &amp; 领域泛化</div>
+      </div>
+    </div>
+
+    <div class="section-label reveal" style="margin-top:40px;">
+      <span class="section-label__text">研究人员</span>
+      <span class="section-label__line"></span>
+    </div>
+    <div class="researcher-grid reveal">
+      <div class="member-card">
+        <div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=JianyongWei&backgroundColor=d1d4f9" alt="韦建雍" loading="lazy"></div>
+        <div class="member-card__info">
+          <div class="member-card__name">韦建雍 <span class="member-card__name-en">Jianyong Wei</span></div>
+          <div class="member-card__meta">上海市第六人民医院临床研究中心 · 助理研究员</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=ZhengSun&backgroundColor=ffd5dc" alt="孙正" loading="lazy"></div>
+        <div class="member-card__info">
+          <div class="member-card__name">孙正 <span class="member-card__name-en">Zheng Sun</span></div>
+          <div class="member-card__meta">上海市第六人民医院放射介入科 · 主管技师</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="phd" class="student-category reveal">
+      <div class="section-label"><span class="section-label__text">博士研究生</span><span class="section-label__line"></span></div>
+      <div class="student-category__sub">
+        <div class="student-category__sub-label">工学博士</div>
+        <div class="member-grid">
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=MengfeiWang&backgroundColor=c0e6f5" alt="王孟飞" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">王孟飞 <span class="member-card__name-en">Mengfei Wang</span></div><div class="member-card__meta">东华大学信智学院 · 2025级</div></div></div>
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YaoZeng&backgroundColor=e6f0d3" alt="曾耀" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">曾耀 <span class="member-card__name-en">Yao Zeng</span></div><div class="member-card__meta">东华大学信智学院 · 2025级</div></div></div>
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=TiantianShe&backgroundColor=ffe0c6" alt="折甜甜" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">折甜甜 <span class="member-card__name-en">Tiantian She</span></div><div class="member-card__meta">交大医学院 · 医工交叉专项 · 2025级</div></div></div>
+        </div>
+      </div>
+      <div class="student-category__sub">
+        <div class="student-category__sub-label">医学博士</div>
+        <div class="member-grid">
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=PingWangMD&backgroundColor=b4d6e8" alt="王平" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">王平 <span class="member-card__name-en">Ping Wang</span></div><div class="member-card__meta">交大医学院 · 2025级</div></div></div>
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=XuanchenJin&backgroundColor=e8d5f5" alt="金宣辰" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">金宣辰 <span class="member-card__name-en">Xuanchen Jin</span></div><div class="member-card__meta">交大医学院 · 2025级</div></div></div>
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=MengdanJiang&backgroundColor=d5f5d5" alt="姜梦丹" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">姜梦丹 <span class="member-card__name-en">Mengdan Jiang</span></div><div class="member-card__meta">交大医学院 · 2025级</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="master" class="student-category reveal">
+      <div class="section-label"><span class="section-label__text">硕士研究生</span><span class="section-label__line"></span></div>
+      <div class="student-category__sub">
+        <div class="student-category__sub-label">工学硕士</div>
+        <div class="member-grid">
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YunyiLi&backgroundColor=f5d5d5" alt="李昀顗" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">李昀顗 <span class="member-card__name-en">Yunyi Li</span></div><div class="member-card__meta">东华大学生医工学院 · 2024级</div></div></div>
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YuanyiWang&backgroundColor=d5e0f5" alt="汪源仪" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">汪源仪 <span class="member-card__name-en">Yuanyi Wang</span></div><div class="member-card__meta">东华大学信智学院 · 2024级</div></div></div>
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=WenhuaZheng&backgroundColor=f5e3d5" alt="郑文华" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">郑文华 <span class="member-card__name-en">Wenhua Zheng</span></div><div class="member-card__meta">东华大学信智学院 · 2025级</div></div></div>
+        </div>
+      </div>
+      <div class="student-category__sub">
+        <div class="student-category__sub-label">医学硕士</div>
+        <div class="member-grid">
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=ZhongzhengCao&backgroundColor=b4e0d0" alt="曹中正" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">曹中正 <span class="member-card__name-en">Zhongzheng Cao</span></div><div class="member-card__meta">交大医学院 · 2024级</div></div></div>
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YifanTu&backgroundColor=e0e8f0" alt="屠艺凡" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">屠艺凡 <span class="member-card__name-en">Yifan Tu</span></div><div class="member-card__meta">交大医学院 · 2024级</div></div></div>
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YixiaoTang&backgroundColor=f0e0d0" alt="汤亦骁" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">汤亦骁 <span class="member-card__name-en">Yixiao Tang</span></div><div class="member-card__meta">交大医学院 · 2024级</div></div></div>
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=JunlinZhang&backgroundColor=d0d8e8" alt="张俊林" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">张俊林 <span class="member-card__name-en">Junlin Zhang</span></div><div class="member-card__meta">交大医学院 · 2025级</div></div></div>
+          <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=KaiyueSun&backgroundColor=e8e0f0" alt="孙楷玥" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">孙楷玥 <span class="member-card__name-en">Kaiyue Sun</span></div><div class="member-card__meta">交大医学院 · 2025级</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="alumni" class="alumni-section reveal" style="margin-top:48px;">
+      <div class="section-label"><span class="section-label__text">毕业致谢</span><span class="section-label__line"></span></div>
+      <div class="member-grid">
+        <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YuluYang&backgroundColor=e0e0e0" alt="杨雨露" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">杨雨露 <span class="member-card__name-en">Yulu Yang</span></div><div class="member-card__meta">硕士 · 上海理工大学 · 生物医学工程 · 2023级</div></div></div>
+        <div class="member-card"><div class="member-card__avatar"><img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=JingyingTao&backgroundColor=e0e0e0" alt="陶晶莹" loading="lazy"></div><div class="member-card__info"><div class="member-card__name">陶晶莹 <span class="member-card__name-en">Jingying Tao</span></div><div class="member-card__meta">硕士 · 交大医学院 · 2023级 · 2026年毕业，继续攻读博士</div></div></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__links">
+        <a href="./index_ch.html">返回主页</a><span style="color:var(--slate-300);">·</span>
+        <a href="mailto:zhangrp@sjtu.edu.cn">邮箱</a><span style="color:var(--slate-300);">·</span>
+        <a href="https://scholar.google.com/citations?user=m7RzJxwAAAAJ&hl=zh-CN">谷歌学术</a><span style="color:var(--slate-300);">·</span>
+        <a href="https://github.com/FrankZhangRp/">GitHub</a><span style="color:var(--slate-300);">·</span>
+        <a href="./team.html">English Team</a>
+      </div>
+      <p class="footer__meta">AI4Rad 实验室 · 上海市第六人民医院放射介入科 · &copy; 2026</p>
+    </footer>
+  </main>
+
+  <script>
+    (function(){var h=document.documentElement,b=document.getElementById('themeToggle'),s=localStorage.getItem('theme');if(s==='dark'||s==='light')h.setAttribute('data-theme',s);else h.setAttribute('data-theme','auto');update();b.addEventListener('click',function(){var c=h.getAttribute('data-theme');h.setAttribute('data-theme',c==='dark'?'light':c==='light'?'dark':'dark');localStorage.setItem('theme',h.getAttribute('data-theme'));update();});function update(){var c=h.getAttribute('data-theme');b.textContent=(c==='dark'||(c==='auto'&&window.matchMedia('(prefers-color-scheme: dark)').matches))? '\u2600\uFE0F':'\uD83C\uDF19';}window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){if(h.getAttribute('data-theme')==='auto')update();});})();
+    (function(){var r=document.querySelectorAll('.reveal'),o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.06});r.forEach(function(x){o.observe(x);});})();
+    (function(){var l=document.querySelectorAll('.nav__link'),s=[];l.forEach(function(x){var i=x.getAttribute('href').slice(1),e=document.getElementById(i);if(e)s.push({link:x,sec:e});});if(!s.length)return;var o=new IntersectionObserver(function(e){e.forEach(function(x){if(!x.isIntersecting)return;l.forEach(function(y){y.classList.remove('active');});var m=s.filter(function(y){return y.sec===x.target;})[0];if(m)m.link.classList.add('active');});},{rootMargin:'-30% 0px -60% 0px',threshold:0});s.forEach(function(x){o.observe(x.sec);});})();
+  </script>
+</body>
+</html>

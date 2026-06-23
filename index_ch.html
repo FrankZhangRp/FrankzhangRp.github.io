@@ -317,172 +317,53 @@
     }
 
     /* ============================
-       Team Section
+       Projects Section
        ============================ */
-    .team-lab-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 8px 20px;
-      background: linear-gradient(135deg, #eff6ff, #dbeafe);
-      border: 1px solid var(--blue-300);
-      border-radius: 999px;
-      font-size: 0.8rem; font-weight: 600;
-      color: var(--blue-600);
-      margin-bottom: 32px;
-    }
-    html[data-theme="dark"] .team-lab-badge {
-      background: linear-gradient(135deg, #1e293b, #1e3a5f);
-      border-color: #1e3a5f;
-      color: var(--blue-400);
-    }
-    .team-lab-badge__dot {
-      width: 8px; height: 8px; background: var(--blue-600);
-      border-radius: 50%;
-    }
-    html[data-theme="dark"] .team-lab-badge__dot { background: var(--blue-400); }
-
-    .team-leader {
+    .projects-grid {
       display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 24px; align-items: center;
-      padding: 24px 28px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .project-card {
       background: var(--bg-card);
       border-radius: var(--radius-lg);
+      padding: 28px;
       border: 1px solid var(--border);
-      margin-bottom: 20px;
-      transition: box-shadow 0.3s;
+      transition: all 0.3s;
+      display: flex; flex-direction: column;
     }
-    .team-leader:hover { box-shadow: var(--shadow-md); }
-    .team-leader__avatar {
-      width: 80px; height: 80px; border-radius: 50%;
-      background: var(--navy-100); overflow: hidden;
-      border: 3px solid var(--blue-600);
-      flex-shrink: 0;
+    .project-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+      border-color: var(--blue-300);
     }
-    .team-leader__avatar img { width: 100%; height: 100%; }
-    .team-leader__name {
-      font-size: 1.1rem; font-weight: 700; color: var(--text-primary);
-    }
-    .team-leader__name-cn {
-      font-weight: 500; font-size: 0.95rem; color: var(--text-secondary);
-      margin-left: 8px;
-    }
-    .team-leader__title {
-      font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;
-      line-height: 1.6;
-    }
-    .team-leader__tag {
-      display: inline-block; padding: 2px 9px;
-      background: var(--blue-50); color: var(--blue-600);
-      border-radius: 999px; font-size: 0.65rem; font-weight: 600;
-      margin-right: 4px;
-    }
-    html[data-theme="dark"] .team-leader__tag {
-      background: #1e3a5f; color: var(--blue-400);
-    }
-
-    .team-pi {
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 20px; align-items: center;
-      padding: 20px 24px;
-      background: var(--bg-card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      margin-bottom: 20px;
-      transition: box-shadow 0.3s;
-    }
-    .team-pi:hover { box-shadow: var(--shadow-md); }
-    .team-pi__avatar {
-      width: 72px; height: 72px; border-radius: 50%;
-      background: var(--navy-100); overflow: hidden;
-      border: 2px solid var(--blue-500);
-      flex-shrink: 0;
-    }
-    .team-pi__avatar img { width: 100%; height: 100%; }
-    .team-pi__name {
-      font-size: 1rem; font-weight: 700; color: var(--text-primary);
-    }
-    .team-pi__name-cn {
-      font-weight: 500; font-size: 0.88rem; color: var(--text-secondary);
-      margin-left: 8px;
-    }
-    .team-pi__title {
-      font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;
-    }
-
-    .team-researchers {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .team-member {
-      display: flex; align-items: center; gap: 14px;
-      padding: 14px 18px;
-      background: var(--bg-card);
+    .project-card__icon {
+      width: 40px; height: 40px;
       border-radius: var(--radius-md);
-      border: 1px solid var(--border-light);
-      transition: all 0.2s;
-    }
-    .team-member:hover {
-      box-shadow: var(--shadow-sm);
-      transform: translateY(-1px);
-      border-color: var(--border);
-    }
-    .team-member__avatar {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--navy-100); overflow: hidden;
-      flex-shrink: 0;
-    }
-    .team-member__avatar img { width: 100%; height: 100%; }
-    .team-member__info { flex: 1; min-width: 0; }
-    .team-member__name {
-      font-weight: 600; font-size: 0.875rem; color: var(--text-primary);
-    }
-    .team-member__name-cn {
-      font-weight: 400; font-size: 0.8rem; color: var(--text-secondary);
-    }
-    .team-member__meta {
-      font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;
-    }
-
-    .team-category {
-      margin-top: 32px;
-    }
-    .team-category__title {
-      font-family: var(--font-body);
-      font-size: 0.95rem; font-weight: 600;
-      color: var(--text-primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem;
       margin-bottom: 16px;
-      display: flex; align-items: center; gap: 10px;
     }
-    .team-category__title::before {
-      content: ''; width: 24px; height: 3px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 2px;
-      flex-shrink: 0;
+    .project-card__title {
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
     }
-    .team-subcategory {
-      margin-bottom: 20px;
+    .project-card__desc {
+      font-size: 0.85rem; color: var(--text-secondary);
+      line-height: 1.65; flex: 1;
     }
-    .team-subcategory__label {
-      font-size: 0.72rem; font-weight: 600; color: var(--text-muted);
-      text-transform: uppercase; letter-spacing: 0.06em;
-      margin-bottom: 12px;
-      padding-left: 4px;
+    .project-card__papers {
+      margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px;
     }
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 10px;
+    .project-card__paper-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 10px; font-size: 0.7rem; font-weight: 500;
+      background: var(--blue-50); color: var(--blue-600);
+      border-radius: 999px; transition: all 0.2s;
     }
-
-    .team-alumni {
-      opacity: 0.85;
-    }
-    .team-alumni .team-member__avatar {
-      opacity: 0.75;
+    .project-card__paper-link:hover {
+      background: var(--blue-600); color: #fff;
     }
 
     /* ============================
@@ -684,18 +565,7 @@
       .news-item { flex-direction: column; gap: 6px; }
       .news-item__date { min-width: auto; }
 
-      .team-leader {
-        grid-template-columns: 64px 1fr; gap: 16px;
-        padding: 18px 20px;
-      }
-      .team-leader__avatar { width: 64px; height: 64px; }
-      .team-pi {
-        grid-template-columns: 56px 1fr; gap: 14px;
-        padding: 16px 18px;
-      }
-      .team-pi__avatar { width: 56px; height: 56px; }
-      .team-researchers { grid-template-columns: 1fr; }
-      .team-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
 
     @media (min-width: 1200px) {
@@ -720,7 +590,7 @@
       <span class="nav__brand">张瑞鹏</span>
       <div class="nav__links">
         <a href="#about" class="nav__link">简介</a>
-        <a href="#team" class="nav__link">团队</a>
+        <a href="./team_ch.html" class="nav__link">团队</a>
         <a href="#news" class="nav__link">动态</a>
         <a href="#journal" class="nav__link">期刊</a>
         <a href="#conference" class="nav__link">会议</a>
@@ -796,254 +666,56 @@
       </div>
     </div>
 
-    <!-- 团队成员 -->
-    <section id="team" class="reveal" style="margin-top:48px;">
+    <!-- 研究方向项目 -->
+    <section class="reveal" style="margin-top:48px;">
       <div class="section-head">
-        <h2 class="section-head__title">AI4Rad Lab 团队</h2>
+        <h2 class="section-head__title">研究项目</h2>
         <div class="section-head__line"></div>
       </div>
-
-      <div class="team-lab-badge">
-        <span class="team-lab-badge__dot"></span>
-        放射介入科 · 上海市第六人民医院 · 上海交通大学医学院
-      </div>
-
-      <!-- 团队负责人 -->
-      <div class="team-leader">
-        <div class="team-leader__avatar">
-          <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YuehuaLi" alt="李跃华" loading="lazy">
-        </div>
-        <div>
-          <div class="team-leader__name">
-            李跃华<span class="team-leader__name-cn">Yuehua Li</span>
-          </div>
-          <div class="team-leader__title">
-            <span class="team-leader__tag">团队负责人</span>
-            博士，MD · 上海交通大学特聘教授 · 主任医师 · 上海市第六人民医院副院长
+      <div class="projects-grid">
+        <!-- BrainMIND -->
+        <div class="project-card">
+          <div class="project-card__icon" style="background:#eff6ff;">🧠</div>
+          <div class="project-card__title">BrainMIND</div>
+          <div class="project-card__desc">基于大语言模型的脑MRI报告诊断印象生成研究。多中心基准测试与读片研究，评估大语言模型在临床放射报告中的应用价值。</div>
+          <div class="project-card__papers">
+            <a href="https://www.nature.com/articles/s41746-026-02380-4" class="project-card__paper-link">npj Digital Medicine 2026</a>
+            <a href="https://github.com/FrankZhangRp/BrainMIND" class="project-card__paper-link">开源代码</a>
           </div>
         </div>
-      </div>
-
-      <!-- 课题组长 -->
-      <div class="team-pi">
-        <div class="team-pi__avatar">
-          <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=RuipengZhang" alt="张瑞鹏" loading="lazy">
-        </div>
-        <div>
-          <div class="team-pi__name">
-            张瑞鹏<span class="team-pi__name-cn">Ruipeng Zhang</span>
-          </div>
-          <div class="team-pi__title">课题组组长 · 放射介入科助理研究员</div>
-        </div>
-      </div>
-
-      <!-- 研究人员 -->
-      <div class="team-researchers">
-        <div class="team-member">
-          <div class="team-member__avatar">
-            <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=JianyongWei" alt="韦建雍" loading="lazy">
-          </div>
-          <div class="team-member__info">
-            <div class="team-member__name">韦建雍 <span class="team-member__name-cn">Jianyong Wei</span></div>
-            <div class="team-member__meta">上海市第六人民医院临床研究中心助理研究员</div>
+        <!-- UniChest -->
+        <div class="project-card">
+          <div class="project-card__icon" style="background:#ecfdf5;">🫁</div>
+          <div class="project-card__title">UniChest</div>
+          <div class="project-card__desc">面向多源胸部X光分类的征服-分割预训练方法。统一异构胸部X光数据集，实现鲁棒的医学图像分析。</div>
+          <div class="project-card__papers">
+            <a href="https://tianjiedai.github.io/unichest/" class="project-card__paper-link">IEEE TMI 2024</a>
+            <a href="https://github.com/Elfenreigen/UniChest" class="project-card__paper-link">开源代码</a>
           </div>
         </div>
-        <div class="team-member">
-          <div class="team-member__avatar">
-            <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=ZhengSun" alt="孙正" loading="lazy">
+        <!-- 联邦域泛化 -->
+        <div class="project-card">
+          <div class="project-card__icon" style="background:#fef3c7;">🔗</div>
+          <div class="project-card__title">联邦领域泛化</div>
+          <div class="project-card__desc">面向分布式临床数据的隐私保护跨域泛化研究。在不共享患者数据的前提下，实现多源数据的统一泛化建模。</div>
+          <div class="project-card__papers">
+            <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Federated_Domain_Generalization_With_Generalization_Adjustment_CVPR_2023_paper.pdf" class="project-card__paper-link">CVPR 2023</a>
+            <a href="https://openreview.net/forum?id=I4wB3HA3dJ" class="project-card__paper-link">ICLR 2024</a>
+            <a href="https://github.com/MediaBrain-SJTU/FedDG-GA" class="project-card__paper-link">开源代码</a>
           </div>
-          <div class="team-member__info">
-            <div class="team-member__name">孙正 <span class="team-member__name-cn">Zheng Sun</span></div>
-            <div class="team-member__meta">上海市第六人民医院放射介入科主管技师</div>
+        </div>
+        <!-- FACT -->
+        <div class="project-card">
+          <div class="project-card__icon" style="background:#fce7f3;">📐</div>
+          <div class="project-card__title">傅里叶增强框架</div>
+          <div class="project-card__desc">基于傅里叶变换的数据增强领域泛化方法。通过频域空间扰动学习域不变表征，为跨域迁移提供理论保证。</div>
+          <div class="project-card__papers">
+            <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xu_A_Fourier-Based_Framework_for_Domain_Generalization_CVPR_2021_paper.pdf" class="project-card__paper-link">CVPR 2021</a>
+            <a href="https://www.sciencedirect.com/science/article/pii/S0031320323001747" class="project-card__paper-link">Pattern Recognition 2023</a>
+            <a href="https://github.com/MediaBrain-SJTU/FACT" class="project-card__paper-link">开源代码</a>
           </div>
         </div>
       </div>
-
-      <!-- 博士研究生 -->
-      <div class="team-category">
-        <div class="team-category__title">博士研究生</div>
-
-        <div class="team-subcategory">
-          <div class="team-subcategory__label">工学博士</div>
-          <div class="team-grid">
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=MengfeiWang" alt="王孟飞" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">王孟飞 <span class="team-member__name-cn">Mengfei Wang</span></div>
-                <div class="team-member__meta">东华大学信智学院 · 2025级</div>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YaoZeng" alt="曾耀" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">曾耀 <span class="team-member__name-cn">Yao Zeng</span></div>
-                <div class="team-member__meta">东华大学信智学院 · 2025级</div>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=TiantianShe" alt="折甜甜" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">折甜甜 <span class="team-member__name-cn">Tiantian She</span></div>
-                <div class="team-member__meta">交大医学院 · 医工交叉专项 · 2025级</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-subcategory">
-          <div class="team-subcategory__label">医学博士</div>
-          <div class="team-grid">
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=PingWang" alt="王平" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">王平 <span class="team-member__name-cn">Ping Wang</span></div>
-                <div class="team-member__meta">交大医学院 · 2025级</div>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=XuanchenJin" alt="金宣辰" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">金宣辰 <span class="team-member__name-cn">Xuanchen Jin</span></div>
-                <div class="team-member__meta">交大医学院 · 2025级</div>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=MengdanJiang" alt="姜梦丹" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">姜梦丹 <span class="team-member__name-cn">Mengdan Jiang</span></div>
-                <div class="team-member__meta">交大医学院 · 2025级</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 硕士研究生 -->
-      <div class="team-category">
-        <div class="team-category__title">硕士研究生</div>
-
-        <div class="team-subcategory">
-          <div class="team-subcategory__label">工学硕士</div>
-          <div class="team-grid">
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YunyiLi" alt="李昀顗" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">李昀顗 <span class="team-member__name-cn">Yunyi Li</span></div>
-                <div class="team-member__meta">东华大学生医工学院 · 2024级</div>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YuanyiWang" alt="汪源仪" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">汪源仪 <span class="team-member__name-cn">Yuanyi Wang</span></div>
-                <div class="team-member__meta">东华大学信智学院 · 2024级</div>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=WenhuaZheng" alt="郑文华" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">郑文华 <span class="team-member__name-cn">Wenhua Zheng</span></div>
-                <div class="team-member__meta">东华大学信智学院 · 2025级</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-subcategory">
-          <div class="team-subcategory__label">医学硕士</div>
-          <div class="team-grid">
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=ZhongzhengCao" alt="曹中正" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">曹中正 <span class="team-member__name-cn">Zhongzheng Cao</span></div>
-                <div class="team-member__meta">交大医学院 · 2024级</div>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YifanTu" alt="屠艺凡" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">屠艺凡 <span class="team-member__name-cn">Yifan Tu</span></div>
-                <div class="team-member__meta">交大医学院 · 2024级</div>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YixiaoTang" alt="汤亦骁" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">汤亦骁 <span class="team-member__name-cn">Yixiao Tang</span></div>
-                <div class="team-member__meta">交大医学院 · 2024级</div>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=JunlinZhang" alt="张俊林" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">张俊林 <span class="team-member__name-cn">Junlin Zhang</span></div>
-                <div class="team-member__meta">交大医学院 · 2025级</div>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="team-member__avatar">
-                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=KaiyueSun" alt="孙楷玥" loading="lazy">
-              </div>
-              <div class="team-member__info">
-                <div class="team-member__name">孙楷玥 <span class="team-member__name-cn">Kaiyue Sun</span></div>
-                <div class="team-member__meta">交大医学院 · 2025级</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 毕业致谢 -->
-      <div class="team-category team-alumni">
-        <div class="team-category__title">毕业致谢</div>
-        <div class="team-grid">
-          <div class="team-member">
-            <div class="team-member__avatar">
-              <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YuluYang" alt="杨雨露" loading="lazy">
-            </div>
-            <div class="team-member__info">
-              <div class="team-member__name">杨雨露 <span class="team-member__name-cn">Yulu Yang</span></div>
-              <div class="team-member__meta">硕士 · 上海理工大学 · 生物医学工程 · 2023级</div>
-            </div>
-          </div>
-          <div class="team-member">
-            <div class="team-member__avatar">
-              <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=JingyingTao" alt="陶晶莹" loading="lazy">
-            </div>
-            <div class="team-member__info">
-              <div class="team-member__name">陶晶莹 <span class="team-member__name-cn">Jingying Tao</span></div>
-              <div class="team-member__meta">硕士 · 交大医学院 · 2023级 · 2026年毕业，继续攻读博士</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </section>
 
     <!-- 最新动态 -->

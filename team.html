@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="AI4Rad Lab">
+  <title>AI4Rad Lab · Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>">
+  <style>
+    /* ============================
+       Design Tokens
+       ============================ */
+    :root {
+      --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155;
+      --slate-600: #475569; --slate-500: #64748b; --slate-400: #94a3b8;
+      --slate-300: #cbd5e1; --slate-200: #e2e8f0; --slate-100: #f1f5f9; --slate-50: #f8fafc;
+
+      --blue-600: #2563eb; --blue-500: #3b82f6; --blue-400: #60a5fa;
+      --blue-300: #93c5fd; --blue-100: #dbeafe; --blue-50: #eff6ff;
+
+      --teal-600: #0d9488; --teal-500: #14b8a6; --teal-400: #2dd4bf;
+      --amber-500: #f59e0b; --emerald-500: #10b981;
+
+      --text-primary: var(--slate-900);
+      --text-secondary: var(--slate-600);
+      --text-muted: var(--slate-500);
+      --bg-page: #fafbfc;
+      --bg-card: #ffffff;
+      --border: var(--slate-200);
+      --border-light: var(--slate-100);
+
+      --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px; --radius-xl: 28px;
+      --shadow-sm: 0 1px 2px rgba(15,23,42,0.04);
+      --shadow-md: 0 4px 12px rgba(15,23,42,0.06);
+      --shadow-lg: 0 12px 28px rgba(15,23,42,0.08);
+
+      --nav-height: 64px;
+      --content-max: 1040px;
+      --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --nav-bg: rgba(255,255,255,0.88);
+    }
+
+    [data-theme="dark"] {
+      --text-primary: #e2e8f0; --text-secondary: #94a3b8; --text-muted: #64748b;
+      --bg-page: #0b1120; --bg-card: #1a2332; --border: #2d3a4a; --border-light: #243044;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+      --shadow-lg: 0 12px 28px rgba(0,0,0,0.5);
+      --nav-bg: rgba(11,17,32,0.9);
+      --blue-50: #1a2332;
+      --blue-100: #1e2d42;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 32px); }
+    body {
+      font-family: var(--font-body);
+      font-size: 15px; line-height: 1.7; color: var(--text-primary);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "kern","liga","tnum";
+      padding-top: var(--nav-height);
+    }
+    a { color: var(--blue-600); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--teal-600); }
+    ::selection { background: rgba(59,130,246,0.18); }
+
+    /* ============================
+       Navigation
+       ============================ */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height);
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000; display: flex; align-items: center; justify-content: center;
+    }
+    .nav__inner {
+      display: flex; align-items: center; gap: 12px;
+      max-width: var(--content-max); width: 100%; padding: 0 24px;
+    }
+    .nav__brand {
+      font-family: var(--font-display);
+      font-size: 1.15rem; font-weight: 600; color: var(--text-primary);
+      margin-right: auto; letter-spacing: -0.01em;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav__brand-dot {
+      width: 10px; height: 10px; background: var(--blue-600);
+      border-radius: 3px; transform: rotate(45deg);
+    }
+    .nav__links { display: flex; align-items: center; gap: 4px; }
+    .nav__link {
+      padding: 6px 16px; font-size: 0.82rem; font-weight: 500;
+      color: var(--text-secondary); border-radius: 999px;
+      transition: all 0.2s; letter-spacing: 0.01em;
+    }
+    .nav__link:hover { background: var(--blue-50); color: var(--text-primary); }
+    .nav__link.active { background: var(--blue-600); color: #fff; }
+    .nav__link--home {
+      padding: 6px 16px; font-size: 0.82rem; font-weight: 500;
+      color: var(--text-secondary); border-radius: 999px;
+      transition: all 0.2s; display: flex; align-items: center; gap: 5px;
+      border: 1px solid var(--border);
+    }
+    .nav__link--home:hover { background: var(--blue-50); border-color: var(--blue-600); color: var(--blue-600); }
+    .nav__theme-btn {
+      background: none; border: none; cursor: pointer;
+      font-size: 1.2rem; padding: 4px 8px; border-radius: var(--radius-sm);
+      transition: background 0.2s; line-height: 1; margin-left: 8px;
+    }
+    .nav__theme-btn:hover { background: var(--blue-50); }
+
+    /* ============================
+       Layout Container
+       ============================ */
+    .wrapper { max-width: var(--content-max); margin: 0 auto; padding: 0 24px; }
+
+    /* ============================
+       Hero Section
+       ============================ */
+    .team-hero {
+      padding: 64px 0 48px; text-align: center;
+    }
+    .team-hero__badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 18px;
+      border: 1px solid var(--blue-300); border-radius: 999px;
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--blue-600);
+      margin-bottom: 24px;
+    }
+    [data-theme="dark"] .team-hero__badge { border-color: #2d4a77; color: var(--blue-400); }
+    .team-hero__badge-dot {
+      width: 7px; height: 7px; background: var(--blue-600); border-radius: 50%;
+    }
+    .team-hero__title {
+      font-family: var(--font-display);
+      font-size: 3.25rem; font-weight: 700;
+      line-height: 1.15; letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--slate-900) 0%, #1e40af 50%, var(--teal-600) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    [data-theme="dark"] .team-hero__title {
+      background: linear-gradient(135deg, #e2e8f0 0%, #60a5fa 50%, #2dd4bf 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .team-hero__subtitle {
+      font-size: 1.1rem; color: var(--text-secondary);
+      max-width: 640px; margin: 0 auto; line-height: 1.7;
+    }
+    .team-hero__dept {
+      margin-top: 20px; font-size: 0.85rem; color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* ============================
+       Stats Row
+       ============================ */
+    .team-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 16px; padding: 0 0 40px;
+    }
+    .team-stat {
+      background: var(--bg-card); border-radius: var(--radius-lg);
+      padding: 24px 20px; text-align: center;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .team-stat:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .team-stat__number {
+      font-family: var(--font-display);
+      font-size: 2.25rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--blue-600), var(--teal-600));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .team-stat__label { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; font-weight: 500; }
+
+    /* ============================
+       Section Labels
+       ============================ */
+    .section-label {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+    }
+    .section-label__text {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 600; color: var(--text-primary);
+      white-space: nowrap;
+    }
+    .section-label__line { flex: 1; height: 1px; background: var(--border); }
+
+    /* ============================
+       Leader Card
+       ============================ */
+    .leader-card {
+      display: grid; grid-template-columns: 120px 1fr;
+      gap: 32px; align-items: center;
+      padding: 36px 36px; background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .leader-card:hover { box-shadow: var(--shadow-lg); }
+    .leader-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: linear-gradient(180deg, var(--blue-600), var(--teal-600));
+    }
+    .leader-card__avatar {
+      width: 120px; height: 120px; border-radius: 50%;
+      overflow: hidden; background: var(--slate-100);
+      border: 3px solid var(--blue-600);
+      flex-shrink: 0;
+    }
+    .leader-card__avatar img { width: 100%; height: 100%; }
+    .leader-card__name {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 700; color: var(--text-primary);
+    }
+    .leader-card__name-cn {
+      font-weight: 400; font-size: 1.1rem; color: var(--text-secondary);
+      margin-left: 10px;
+    }
+    .leader-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+    .leader-card__tag {
+      padding: 3px 12px; background: var(--blue-50); color: var(--blue-600);
+      border-radius: 999px; font-size: 0.7rem; font-weight: 600;
+    }
+    [data-theme="dark"] .leader-card__tag { background: #1e2d42; color: var(--blue-400); }
+    .leader-card__meta { font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; }
+
+    /* ============================
+       PI Card
+       ============================ */
+    .pi-card {
+      display: grid; grid-template-columns: 96px 1fr;
+      gap: 28px; align-items: center;
+      padding: 28px 32px; background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    .pi-card:hover { box-shadow: var(--shadow-md); }
+    .pi-card__avatar {
+      width: 96px; height: 96px; border-radius: 50%;
+      overflow: hidden; background: var(--slate-100);
+      border: 2px solid var(--blue-500);
+      flex-shrink: 0;
+    }
+    .pi-card__avatar img { width: 100%; height: 100%; }
+    .pi-card__name {
+      font-family: var(--font-display);
+      font-size: 1.25rem; font-weight: 700; color: var(--text-primary);
+    }
+    .pi-card__name-cn {
+      font-weight: 400; font-size: 0.95rem; color: var(--text-secondary);
+      margin-left: 8px;
+    }
+    .pi-card__meta { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* ============================
+       Researchers Grid
+       ============================ */
+    .researcher-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    /* ============================
+       Member Card
+       ============================ */
+    .member-card {
+      display: flex; align-items: center; gap: 16px;
+      padding: 18px 22px; background: var(--bg-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      transition: all 0.25s;
+    }
+    .member-card:hover {
+      box-shadow: var(--shadow-sm); transform: translateY(-2px);
+      border-color: var(--border);
+    }
+    .member-card__avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      overflow: hidden; background: var(--slate-100);
+      flex-shrink: 0;
+    }
+    .member-card__avatar img { width: 100%; height: 100%; }
+    .member-card__info { flex: 1; min-width: 0; }
+    .member-card__name {
+      font-weight: 600; font-size: 0.92rem; color: var(--text-primary);
+    }
+    .member-card__name-cn {
+      font-weight: 400; font-size: 0.8rem; color: var(--text-secondary);
+    }
+    .member-card__meta {
+      font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;
+      line-height: 1.5;
+    }
+
+    /* ============================
+       Student Category
+       ============================ */
+    .student-category { margin-top: 36px; }
+    .student-category__title {
+      font-family: var(--font-display);
+      font-size: 1.2rem; font-weight: 600; color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .student-category__sub {
+      margin-bottom: 24px;
+    }
+    .student-category__sub-label {
+      font-size: 0.72rem; font-weight: 600; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 12px; padding-left: 4px;
+    }
+    .member-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 10px;
+    }
+
+    /* ============================
+       Alumni
+       ============================ */
+    .alumni-section { opacity: 0.82; }
+    .alumni-section .member-card__avatar { opacity: 0.7; }
+
+    /* ============================
+       Footer
+       ============================ */
+    .footer {
+      margin-top: 64px; padding: 32px 0 40px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .footer__links { display: flex; justify-content: center; gap: 24px; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer__links a { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
+    .footer__links a:hover { color: var(--blue-600); }
+    .footer__meta { font-size: 0.75rem; color: var(--slate-400); margin-top: 4px; }
+
+    /* ============================
+       Scroll Reveal
+       ============================ */
+    .reveal {
+      opacity: 0; transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================
+       Responsive
+       ============================ */
+    @media (max-width: 768px) {
+      :root { --nav-height: 52px; }
+      .nav__brand { font-size: 0.95rem; }
+      .nav__link, .nav__link--home { font-size: 0.72rem; padding: 5px 10px; }
+      .nav__links { gap: 2px; }
+
+      .team-hero { padding: 40px 0 32px; }
+      .team-hero__title { font-size: 2.25rem; }
+      .team-hero__subtitle { font-size: 0.95rem; }
+
+      .team-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+      .leader-card { grid-template-columns: 1fr; gap: 20px; text-align: center; padding: 28px 24px; }
+      .leader-card__avatar { margin: 0 auto; width: 96px; height: 96px; }
+      .leader-card::before { width: 100%; height: 4px; }
+      .pi-card { grid-template-columns: 1fr; gap: 16px; text-align: center; padding: 24px 20px; }
+      .pi-card__avatar { margin: 0 auto; width: 80px; height: 80px; }
+
+      .researcher-grid { grid-template-columns: 1fr; }
+      .member-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 1200px) {
+      .wrapper { max-width: 1100px; }
+    }
+
+    @media print {
+      body { background: #fff; padding-top: 0; }
+      .nav { display: none; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <span class="nav__brand">
+        <span class="nav__brand-dot"></span>
+        AI4Rad Lab
+      </span>
+      <div class="nav__links">
+        <a href="./index.html" class="nav__link--home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Home
+        </a>
+        <a href="#researchers" class="nav__link">Researchers</a>
+        <a href="#phd" class="nav__link">PhD</a>
+        <a href="#master" class="nav__link">Master</a>
+        <a href="#alumni" class="nav__link">Alumni</a>
+      </div>
+      <button class="nav__theme-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <main class="wrapper">
+
+    <!-- Hero -->
+    <section class="team-hero reveal">
+      <div class="team-hero__badge">
+        <span class="team-hero__badge-dot"></span>
+        Department of Radiology &middot; Shanghai Sixth People's Hospital
+      </div>
+      <h1 class="team-hero__title">AI4Rad Lab</h1>
+      <p class="team-hero__subtitle">
+        Medical Imaging &amp; Artificial Intelligence Research Group
+      </p>
+      <p class="team-hero__dept">
+        Department of Radiology, Shanghai Sixth People's Hospital, Shanghai Jiao Tong University School of Medicine
+      </p>
+    </section>
+
+    <!-- Stats -->
+    <div class="team-stats reveal">
+      <div class="team-stat">
+        <div class="team-stat__number">21</div>
+        <div class="team-stat__label">Team Members</div>
+      </div>
+      <div class="team-stat">
+        <div class="team-stat__number">3</div>
+        <div class="team-stat__label">Research Areas</div>
+      </div>
+      <div class="team-stat">
+        <div class="team-stat__number">12+</div>
+        <div class="team-stat__label">Publications</div>
+      </div>
+      <div class="team-stat">
+        <div class="team-stat__number">3</div>
+        <div class="team-stat__label">Institutions</div>
+      </div>
+    </div>
+
+    <!-- Leader -->
+    <div class="section-label reveal">
+      <span class="section-label__text">Lab Director</span>
+      <span class="section-label__line"></span>
+    </div>
+    <div class="leader-card reveal">
+      <div class="leader-card__avatar">
+        <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YuehuaLi&backgroundColor=b6e3f4" alt="Yuehua Li" loading="lazy">
+      </div>
+      <div>
+        <div class="leader-card__name">
+          Yuehua Li<span class="leader-card__name-cn">李跃华</span>
+        </div>
+        <div class="leader-card__tags">
+          <span class="leader-card__tag">Lab Director</span>
+          <span class="leader-card__tag">PhD, MD</span>
+          <span class="leader-card__tag">Chief Physician</span>
+          <span class="leader-card__tag">Vice President, SSPH</span>
+        </div>
+        <div class="leader-card__meta">
+          Distinguished Professor, Shanghai Jiao Tong University &middot; Chief Physician<br>
+          Vice President, Shanghai Sixth People's Hospital &middot; Department of Radiology
+        </div>
+      </div>
+    </div>
+
+    <!-- PI -->
+    <div id="researchers" class="section-label reveal" style="margin-top:40px;">
+      <span class="section-label__text">Principal Investigator</span>
+      <span class="section-label__line"></span>
+    </div>
+    <div class="pi-card reveal">
+      <div class="pi-card__avatar">
+        <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=RuipengZhang&backgroundColor=c0aede" alt="Ruipeng Zhang" loading="lazy">
+      </div>
+      <div>
+        <div class="pi-card__name">
+          Ruipeng Zhang<span class="pi-card__name-cn">张瑞鹏</span>
+        </div>
+        <div class="pi-card__meta">Principal Investigator &middot; Assistant Researcher, Department of Radiology<br>Ph.D., Shanghai Jiao Tong University (2024) &middot; Medical VLM &amp; Domain Generalization</div>
+      </div>
+    </div>
+
+    <!-- Researchers -->
+    <div class="section-label reveal" style="margin-top:40px;">
+      <span class="section-label__text">Researchers</span>
+      <span class="section-label__line"></span>
+    </div>
+    <div class="researcher-grid reveal">
+      <div class="member-card">
+        <div class="member-card__avatar">
+          <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=JianyongWei&backgroundColor=d1d4f9" alt="Jianyong Wei" loading="lazy">
+        </div>
+        <div class="member-card__info">
+          <div class="member-card__name">Jianyong Wei <span class="member-card__name-cn">韦建雍</span></div>
+          <div class="member-card__meta">Assistant Researcher · Clinical Research Center, SSPH</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-card__avatar">
+          <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=ZhengSun&backgroundColor=ffd5dc" alt="Zheng Sun" loading="lazy">
+        </div>
+        <div class="member-card__info">
+          <div class="member-card__name">Zheng Sun <span class="member-card__name-cn">孙正</span></div>
+          <div class="member-card__meta">Chief Technician · Department of Radiology, SSPH</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PhD Students -->
+    <div id="phd" class="student-category reveal">
+      <div class="section-label">
+        <span class="section-label__text">PhD Students</span>
+        <span class="section-label__line"></span>
+      </div>
+
+      <div class="student-category__sub">
+        <div class="student-category__sub-label">Engineering / 工学</div>
+        <div class="member-grid">
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=MengfeiWang&backgroundColor=c0e6f5" alt="Mengfei Wang" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Mengfei Wang <span class="member-card__name-cn">王孟飞</span></div>
+              <div class="member-card__meta">Donghua University · School of Information Science · 2025</div>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YaoZeng&backgroundColor=e6f0d3" alt="Yao Zeng" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Yao Zeng <span class="member-card__name-cn">曾耀</span></div>
+              <div class="member-card__meta">Donghua University · School of Information Science · 2025</div>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=TiantianShe&backgroundColor=ffe0c6" alt="Tiantian She" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Tiantian She <span class="member-card__name-cn">折甜甜</span></div>
+              <div class="member-card__meta">SJTU School of Medicine · Medical-Engineering Cross Program · 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="student-category__sub">
+        <div class="student-category__sub-label">Medical / 医学</div>
+        <div class="member-grid">
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=PingWangMD&backgroundColor=b4d6e8" alt="Ping Wang" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Ping Wang <span class="member-card__name-cn">王平</span></div>
+              <div class="member-card__meta">SJTU School of Medicine · 2025</div>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=XuanchenJin&backgroundColor=e8d5f5" alt="Xuanchen Jin" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Xuanchen Jin <span class="member-card__name-cn">金宣辰</span></div>
+              <div class="member-card__meta">SJTU School of Medicine · 2025</div>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=MengdanJiang&backgroundColor=d5f5d5" alt="Mengdan Jiang" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Mengdan Jiang <span class="member-card__name-cn">姜梦丹</span></div>
+              <div class="member-card__meta">SJTU School of Medicine · 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Master Students -->
+    <div id="master" class="student-category reveal">
+      <div class="section-label">
+        <span class="section-label__text">Master Students</span>
+        <span class="section-label__line"></span>
+      </div>
+
+      <div class="student-category__sub">
+        <div class="student-category__sub-label">Engineering / 工学</div>
+        <div class="member-grid">
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YunyiLi&backgroundColor=f5d5d5" alt="Yunyi Li" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Yunyi Li <span class="member-card__name-cn">李昀顗</span></div>
+              <div class="member-card__meta">Donghua University · School of Biomedical Engineering · 2024</div>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YuanyiWang&backgroundColor=d5e0f5" alt="Yuanyi Wang" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Yuanyi Wang <span class="member-card__name-cn">汪源仪</span></div>
+              <div class="member-card__meta">Donghua University · School of Information Science · 2024</div>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=WenhuaZheng&backgroundColor=f5e3d5" alt="Wenhua Zheng" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Wenhua Zheng <span class="member-card__name-cn">郑文华</span></div>
+              <div class="member-card__meta">Donghua University · School of Information Science · 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="student-category__sub">
+        <div class="student-category__sub-label">Medical / 医学</div>
+        <div class="member-grid">
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=ZhongzhengCao&backgroundColor=b4e0d0" alt="Zhongzheng Cao" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Zhongzheng Cao <span class="member-card__name-cn">曹中正</span></div>
+              <div class="member-card__meta">SJTU School of Medicine · 2024</div>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YifanTu&backgroundColor=e0e8f0" alt="Yifan Tu" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Yifan Tu <span class="member-card__name-cn">屠艺凡</span></div>
+              <div class="member-card__meta">SJTU School of Medicine · 2024</div>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YixiaoTang&backgroundColor=f0e0d0" alt="Yixiao Tang" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Yixiao Tang <span class="member-card__name-cn">汤亦骁</span></div>
+              <div class="member-card__meta">SJTU School of Medicine · 2024</div>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=JunlinZhang&backgroundColor=d0d8e8" alt="Junlin Zhang" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Junlin Zhang <span class="member-card__name-cn">张俊林</span></div>
+              <div class="member-card__meta">SJTU School of Medicine · 2025</div>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-card__avatar">
+              <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=KaiyueSun&backgroundColor=e8e0f0" alt="Kaiyue Sun" loading="lazy">
+            </div>
+            <div class="member-card__info">
+              <div class="member-card__name">Kaiyue Sun <span class="member-card__name-cn">孙楷玥</span></div>
+              <div class="member-card__meta">SJTU School of Medicine · 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alumni -->
+    <div id="alumni" class="alumni-section reveal" style="margin-top:48px;">
+      <div class="section-label">
+        <span class="section-label__text">Alumni</span>
+        <span class="section-label__line"></span>
+      </div>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-card__avatar">
+            <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=YuluYang&backgroundColor=e0e0e0" alt="Yulu Yang" loading="lazy">
+          </div>
+          <div class="member-card__info">
+            <div class="member-card__name">Yulu Yang <span class="member-card__name-cn">杨雨露</span></div>
+            <div class="member-card__meta">Master · USST · Biomedical Engineering · Class of 2023</div>
+          </div>
+        </div>
+        <div class="member-card">
+          <div class="member-card__avatar">
+            <img src="https://api.dicebear.com/9.x/lorelei-neutral/svg?seed=JingyingTao&backgroundColor=e0e0e0" alt="Jingying Tao" loading="lazy">
+          </div>
+          <div class="member-card__info">
+            <div class="member-card__name">Jingying Tao <span class="member-card__name-cn">陶晶莹</span></div>
+            <div class="member-card__meta">Master · SJTU School of Medicine · Class of 2023 · Graduated 2026, continuing PhD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__links">
+        <a href="./index.html">Home</a>
+        <span style="color:var(--slate-300);">·</span>
+        <a href="mailto:zhangrp@sjtu.edu.cn">Email</a>
+        <span style="color:var(--slate-300);">·</span>
+        <a href="https://scholar.google.com/citations?user=m7RzJxwAAAAJ&hl=en">Google Scholar</a>
+        <span style="color:var(--slate-300);">·</span>
+        <a href="https://github.com/FrankZhangRp/">GitHub</a>
+        <span style="color:var(--slate-300);">·</span>
+        <a href="./team_ch.html">中文团队页</a>
+      </div>
+      <p class="footer__meta">AI4Rad Lab &middot; Shanghai Sixth People's Hospital &middot; &copy; 2026</p>
+    </footer>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    (function() {
+      var html = document.documentElement;
+      var btn = document.getElementById('themeToggle');
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark' || saved === 'light') html.setAttribute('data-theme', saved);
+      else html.setAttribute('data-theme', 'auto');
+      updateIcon();
+      btn.addEventListener('click', function() {
+        var c = html.getAttribute('data-theme');
+        html.setAttribute('data-theme', c === 'dark' ? 'light' : c === 'light' ? 'dark' : 'dark');
+        localStorage.setItem('theme', html.getAttribute('data-theme'));
+        updateIcon();
+      });
+      function updateIcon() {
+        var c = html.getAttribute('data-theme');
+        if (c === 'dark' || (c === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches))
+          btn.textContent = '\u2600\uFE0F';
+        else btn.textContent = '\uD83C\uDF19';
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+        if (html.getAttribute('data-theme') === 'auto') updateIcon();
+      });
+    })();
+
+    (function() {
+      var reveals = document.querySelectorAll('.reveal');
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, {threshold: 0.06});
+      reveals.forEach(function(r) { obs.observe(r); });
+    })();
+
+    (function() {
+      var links = document.querySelectorAll('.nav__link');
+      var secs = [];
+      links.forEach(function(l) {
+        var id = l.getAttribute('href').slice(1);
+        var s = document.getElementById(id);
+        if (s) secs.push({link: l, sec: s});
+      });
+      if (!secs.length) return;
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (!e.isIntersecting) return;
+          links.forEach(function(l) { l.classList.remove('active'); });
+          var m = secs.filter(function(s) { return s.sec === e.target; })[0];
+          if (m) m.link.classList.add('active');
+        });
+      }, {rootMargin: '-30% 0px -60% 0px', threshold: 0});
+      secs.forEach(function(s) { obs.observe(s.sec); });
+    })();
+  </script>
+</body>
+</html>
