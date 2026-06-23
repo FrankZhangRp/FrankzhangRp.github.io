@@ -347,6 +347,175 @@
     }
 
     /* ============================
+       Team Section
+       ============================ */
+    .team-lab-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 20px;
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      border: 1px solid var(--blue-300);
+      border-radius: 999px;
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--blue-600);
+      margin-bottom: 32px;
+    }
+    html[data-theme="dark"] .team-lab-badge {
+      background: linear-gradient(135deg, #1e293b, #1e3a5f);
+      border-color: #1e3a5f;
+      color: var(--blue-400);
+    }
+    .team-lab-badge__dot {
+      width: 8px; height: 8px; background: var(--blue-600);
+      border-radius: 50%;
+    }
+    html[data-theme="dark"] .team-lab-badge__dot { background: var(--blue-400); }
+
+    .team-leader {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px; align-items: center;
+      padding: 24px 28px;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s;
+    }
+    .team-leader:hover { box-shadow: var(--shadow-md); }
+    .team-leader__avatar {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: var(--navy-100); overflow: hidden;
+      border: 3px solid var(--blue-600);
+      flex-shrink: 0;
+    }
+    .team-leader__avatar img { width: 100%; height: 100%; }
+    .team-leader__name {
+      font-size: 1.1rem; font-weight: 700; color: var(--text-primary);
+    }
+    .team-leader__name-cn {
+      font-weight: 500; font-size: 0.95rem; color: var(--text-secondary);
+      margin-left: 8px;
+    }
+    .team-leader__title {
+      font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;
+      line-height: 1.6;
+    }
+    .team-leader__tag {
+      display: inline-block; padding: 2px 9px;
+      background: var(--blue-50); color: var(--blue-600);
+      border-radius: 999px; font-size: 0.65rem; font-weight: 600;
+      margin-right: 4px;
+    }
+    html[data-theme="dark"] .team-leader__tag {
+      background: #1e3a5f; color: var(--blue-400);
+    }
+
+    .team-pi {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 20px; align-items: center;
+      padding: 20px 24px;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s;
+    }
+    .team-pi:hover { box-shadow: var(--shadow-md); }
+    .team-pi__avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--navy-100); overflow: hidden;
+      border: 2px solid var(--blue-500);
+      flex-shrink: 0;
+    }
+    .team-pi__avatar img { width: 100%; height: 100%; }
+    .team-pi__name {
+      font-size: 1rem; font-weight: 700; color: var(--text-primary);
+    }
+    .team-pi__name-cn {
+      font-weight: 500; font-size: 0.88rem; color: var(--text-secondary);
+      margin-left: 8px;
+    }
+    .team-pi__title {
+      font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;
+    }
+
+    .team-researchers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .team-member {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      transition: all 0.2s;
+    }
+    .team-member:hover {
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+      border-color: var(--border);
+    }
+    .team-member__avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--navy-100); overflow: hidden;
+      flex-shrink: 0;
+    }
+    .team-member__avatar img { width: 100%; height: 100%; }
+    .team-member__info { flex: 1; min-width: 0; }
+    .team-member__name {
+      font-weight: 600; font-size: 0.875rem; color: var(--text-primary);
+    }
+    .team-member__name-cn {
+      font-weight: 400; font-size: 0.8rem; color: var(--text-secondary);
+    }
+    .team-member__meta {
+      font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;
+    }
+
+    .team-category {
+      margin-top: 32px;
+    }
+    .team-category__title {
+      font-family: var(--font-body);
+      font-size: 0.95rem; font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .team-category__title::before {
+      content: ''; width: 24px; height: 3px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .team-subcategory {
+      margin-bottom: 20px;
+    }
+    .team-subcategory__label {
+      font-size: 0.72rem; font-weight: 600; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 10px;
+    }
+
+    .team-alumni {
+      opacity: 0.85;
+    }
+    .team-alumni .team-member__avatar {
+      opacity: 0.75;
+    }
+
+    /* ============================
        Section Heading
        ============================ */
     .section-head {
@@ -556,6 +725,19 @@
 
       .news-item { flex-direction: column; gap: 6px; }
       .news-item__date { min-width: auto; }
+
+      .team-leader {
+        grid-template-columns: 64px 1fr; gap: 16px;
+        padding: 18px 20px;
+      }
+      .team-leader__avatar { width: 64px; height: 64px; }
+      .team-pi {
+        grid-template-columns: 56px 1fr; gap: 14px;
+        padding: 16px 18px;
+      }
+      .team-pi__avatar { width: 56px; height: 56px; }
+      .team-researchers { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
     }
 
     @media (min-width: 1200px) {
@@ -580,6 +762,7 @@
       <span class="nav__brand">Zhang Ruipeng</span>
       <div class="nav__links">
         <a href="#about" class="nav__link">About</a>
+        <a href="#team" class="nav__link">Team</a>
         <a href="#news" class="nav__link">News</a>
         <a href="#journal" class="nav__link">Journal</a>
         <a href="#conference" class="nav__link">Conference</a>
@@ -654,6 +837,256 @@
         </div>
       </div>
     </div>
+
+    <!-- Team -->
+    <section id="team" class="reveal" style="margin-top:48px;">
+      <div class="section-head">
+        <h2 class="section-head__title">AI4Rad Lab</h2>
+        <div class="section-head__line"></div>
+      </div>
+
+      <div class="team-lab-badge">
+        <span class="team-lab-badge__dot"></span>
+        Department of Radiology · Shanghai Sixth People's Hospital · SJTU School of Medicine
+      </div>
+
+      <!-- Leader -->
+      <div class="team-leader">
+        <div class="team-leader__avatar">
+          <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YuehuaLi" alt="Yuehua Li" loading="lazy">
+        </div>
+        <div>
+          <div class="team-leader__name">
+            Yuehua Li<span class="team-leader__name-cn">李跃华</span>
+          </div>
+          <div class="team-leader__title">
+            <span class="team-leader__tag">Lab Director</span>
+            PhD, MD · Distinguished Professor, SJTU · Chief Physician · Vice President, Shanghai Sixth People's Hospital
+          </div>
+        </div>
+      </div>
+
+      <!-- PI -->
+      <div class="team-pi">
+        <div class="team-pi__avatar">
+          <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=RuipengZhang" alt="Ruipeng Zhang" loading="lazy">
+        </div>
+        <div>
+          <div class="team-pi__name">
+            Ruipeng Zhang<span class="team-pi__name-cn">张瑞鹏</span>
+          </div>
+          <div class="team-pi__title">Principal Investigator · Assistant Researcher, Department of Radiology</div>
+        </div>
+      </div>
+
+      <!-- Researchers -->
+      <div class="team-researchers">
+        <div class="team-member">
+          <div class="team-member__avatar">
+            <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=JianyongWei" alt="Jianyong Wei" loading="lazy">
+          </div>
+          <div class="team-member__info">
+            <div class="team-member__name">Jianyong Wei <span class="team-member__name-cn">韦建雍</span></div>
+            <div class="team-member__meta">Assistant Researcher · Clinical Research Center</div>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-member__avatar">
+            <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=ZhengSun" alt="Zheng Sun" loading="lazy">
+          </div>
+          <div class="team-member__info">
+            <div class="team-member__name">Zheng Sun <span class="team-member__name-cn">孙正</span></div>
+            <div class="team-member__meta">Chief Technician · Department of Radiology</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PhD Students -->
+      <div class="team-category">
+        <div class="team-category__title">PhD Students</div>
+
+        <div class="team-subcategory">
+          <div class="team-subcategory__label">Engineering / 工学</div>
+          <div class="team-grid">
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=MengfeiWang" alt="Mengfei Wang" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Mengfei Wang <span class="team-member__name-cn">王孟飞</span></div>
+                <div class="team-member__meta">Donghua University · School of Information Science · 2025</div>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YaoZeng" alt="Yao Zeng" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Yao Zeng <span class="team-member__name-cn">曾耀</span></div>
+                <div class="team-member__meta">Donghua University · School of Information Science · 2025</div>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=TiantianShe" alt="Tiantian She" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Tiantian She <span class="team-member__name-cn">折甜甜</span></div>
+                <div class="team-member__meta">SJTU School of Medicine · Medical-Engineering Cross Program · 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-subcategory">
+          <div class="team-subcategory__label">Medical / 医学</div>
+          <div class="team-grid">
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=PingWang" alt="Ping Wang" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Ping Wang <span class="team-member__name-cn">王平</span></div>
+                <div class="team-member__meta">SJTU School of Medicine · 2025</div>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=XuanchenJin" alt="Xuanchen Jin" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Xuanchen Jin <span class="team-member__name-cn">金宣辰</span></div>
+                <div class="team-member__meta">SJTU School of Medicine · 2025</div>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=MengdanJiang" alt="Mengdan Jiang" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Mengdan Jiang <span class="team-member__name-cn">姜梦丹</span></div>
+                <div class="team-member__meta">SJTU School of Medicine · 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master Students -->
+      <div class="team-category">
+        <div class="team-category__title">Master Students</div>
+
+        <div class="team-subcategory">
+          <div class="team-subcategory__label">Engineering / 工学</div>
+          <div class="team-grid">
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YunyiLi" alt="Yunyi Li" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Yunyi Li <span class="team-member__name-cn">李昀顗</span></div>
+                <div class="team-member__meta">Donghua University · School of Biomedical Engineering · 2024</div>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YuanyiWang" alt="Yuanyi Wang" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Yuanyi Wang <span class="team-member__name-cn">汪源仪</span></div>
+                <div class="team-member__meta">Donghua University · School of Information Science · 2024</div>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=WenhuaZheng" alt="Wenhua Zheng" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Wenhua Zheng <span class="team-member__name-cn">郑文华</span></div>
+                <div class="team-member__meta">Donghua University · School of Information Science · 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-subcategory">
+          <div class="team-subcategory__label">Medical / 医学</div>
+          <div class="team-grid">
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=ZhongzhengCao" alt="Zhongzheng Cao" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Zhongzheng Cao <span class="team-member__name-cn">曹中正</span></div>
+                <div class="team-member__meta">SJTU School of Medicine · 2024</div>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YifanTu" alt="Yifan Tu" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Yifan Tu <span class="team-member__name-cn">屠艺凡</span></div>
+                <div class="team-member__meta">SJTU School of Medicine · 2024</div>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YixiaoTang" alt="Yixiao Tang" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Yixiao Tang <span class="team-member__name-cn">汤亦骁</span></div>
+                <div class="team-member__meta">SJTU School of Medicine · 2024</div>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=JunlinZhang" alt="Junlin Zhang" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Junlin Zhang <span class="team-member__name-cn">张俊林</span></div>
+                <div class="team-member__meta">SJTU School of Medicine · 2025</div>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="team-member__avatar">
+                <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=KaiyueSun" alt="Kaiyue Sun" loading="lazy">
+              </div>
+              <div class="team-member__info">
+                <div class="team-member__name">Kaiyue Sun <span class="team-member__name-cn">孙楷玥</span></div>
+                <div class="team-member__meta">SJTU School of Medicine · 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alumni -->
+      <div class="team-category team-alumni">
+        <div class="team-category__title">Alumni</div>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="team-member__avatar">
+              <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=YuluYang" alt="Yulu Yang" loading="lazy">
+            </div>
+            <div class="team-member__info">
+              <div class="team-member__name">Yulu Yang <span class="team-member__name-cn">杨雨露</span></div>
+              <div class="team-member__meta">Master · USST · Biomedical Engineering · Class of 2023</div>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="team-member__avatar">
+              <img src="https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=JingyingTao" alt="Jingying Tao" loading="lazy">
+            </div>
+            <div class="team-member__info">
+              <div class="team-member__name">Jingying Tao <span class="team-member__name-cn">陶晶莹</span></div>
+              <div class="team-member__meta">Master · SJTU School of Medicine · Class of 2023 · Graduated 2026, continuing PhD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
     <!-- News -->
     <section id="news" class="reveal">
