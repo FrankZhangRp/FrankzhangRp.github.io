@@ -1,0 +1,685 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>张瑞鹏 - Zhang Ruipeng</title>
+
+  <meta name="author" content="张瑞鹏">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#about" class="nav-link">关于</a>
+      <a href="#news" class="nav-link">动态</a>
+      <a href="#journal" class="nav-link">期刊论文</a>
+      <a href="#conference" class="nav-link">会议论文</a>
+      <a href="#awards" class="nav-link">荣誉</a>
+      <a href="#services" class="nav-link">服务</a>
+    </div>
+  </nav>
+
+  <table class="main-container" style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <!-- 关于部分 -->
+        <section id="about">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>张瑞鹏 (Ruipeng Zhang)</name>
+              </p>
+              <p>我目前是上海交通大学医学院附属第六人民医院放射科助理研究员。我于2024年6月获得<a href="https://www.sjtu.edu.cn/">上海交通大学</a>信息与通信工程博士学位，在<a href="https://cmic.sjtu.edu.cn/EN/Default.aspx">协同创新中心</a> <a href="https://mediabrain.sjtu.edu.cn/">MediaBrain</a>实验室师从<a href="https://mediabrain.sjtu.edu.cn/yazhang/">张娅教授</a>。
+              </p>
+              <div class="contact-links">
+                <a href="mailto:zhangrp@sjtu.edu.cn">邮箱</a>
+                <a href="https://scholar.google.com/citations?user=m7RzJxwAAAAJ&hl=zh-CN&oi=ao">谷歌学术</a>
+                <a href="https://github.com/FrankZhangRp/">Github</a>
+                <a href="./index.html">English</a>
+              </div>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <a href="images/my_photo.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/my_photo.jpg" class="hoverZoomLink profile-photo"></a>
+            </td>
+          </tr>
+        </tbody></table>
+        </section>
+
+        <!-- 研究兴趣与引用统计部分 -->
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:50%;vertical-align:top">
+              <heading>研究方向</heading>
+              <p style="margin-bottom: 0.5rem;">
+                我的研究聚焦于<strong>医学与人工智能的交叉领域</strong>：
+              </p>
+              <ul style="margin-top: 0.5rem;">
+                <li><strong>医学AI</strong>：医学影像的跨模态诊断、医学多模态大模型的微调与诊断推理</li>
+                <li><strong>机器学习</strong>：跨模态与跨分布的一致性优化、领域泛化（Domain Generalization）</li>
+              </ul>
+            </td>
+            <td style="padding:20px;width:50%;vertical-align:top">
+              <heading>谷歌学术引用统计</heading>
+              <div class="citation-stats">
+                <a href="https://scholar.google.com/citations?user=m7RzJxwAAAAJ&hl=zh-CN" target="_blank" class="scholar-badge">
+                  <img src="https://img.shields.io/badge/总引用-1%2C477-4285f4?logo=googlescholar&logoColor=white&style=for-the-badge" alt="Google Scholar Citations" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                  <span class="fallback-stats" style="display:none;">总引用: 1,477</span>
+                </a>
+                <p class="scholar-metrics">h-index <strong>12</strong> &nbsp;·&nbsp; i10-index <strong>13</strong></p>
+                <div id="citationChart"></div>
+              </div>
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript">
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                  // 引用数据 - 定期更新
+                  var data = google.visualization.arrayToDataTable([
+                    ['年份', '引用次数', { role: 'style' }],
+                    ['2021', 19, '#e8f0fe'],
+                    ['2022', 79, '#d2e3fc'],
+                    ['2023', 202, '#a8c7fa'],
+                    ['2024', 396, '#7baaf7'],
+                    ['2025', 545, '#4285f4'],
+                    ['2026', 231, '#1a73e8']
+                  ]);
+
+                  var options = {
+                    legend: { position: 'none' },
+                    chartArea: { width: '85%', height: '75%' },
+                    vAxis: {
+                      minValue: 0,
+                      textStyle: { fontSize: 11, color: '#5f6368' },
+                      gridlines: { color: '#f1f3f4' }
+                    },
+                    hAxis: {
+                      textStyle: { fontSize: 11, color: '#5f6368' }
+                    },
+                    bar: { groupWidth: '70%' },
+                    backgroundColor: 'transparent',
+                    animation: {
+                      startup: true,
+                      duration: 1000,
+                      easing: 'out'
+                    }
+                  };
+
+                  var chart = new google.visualization.ColumnChart(document.getElementById('citationChart'));
+                  chart.draw(data, options);
+                }
+
+                // 窗口大小改变时重绘图表
+                window.addEventListener('resize', drawChart);
+              </script>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <!-- 动态部分 -->
+        <section id="news">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>最新动态</heading>
+              <div class="news-container" style="margin-top: 15px;">
+                <!-- 可见新闻 (最新5条) -->
+                <div class="news-item news-highlight">
+                  <span class="news-date">[2026年1月]</span> 一篇论文被 <strong><em>NPJ Digital Medicine</em></strong> 接收 (SCI Q1, IF=15.2)！[共同一作]
+                </div>
+                <div class="news-item">
+                  <span class="news-date">[2024年12月]</span> 一篇论文被 <strong>Frontiers of Information Technology & Electronic Engineering</strong> 接收！
+                </div>
+                <div class="news-item">
+                  <span class="news-date">[2024年3月]</span> 一篇论文被 <strong><em>IEEE Transactions on Medical Imaging</em></strong> 接收！
+                </div>
+                <div class="news-item">
+                  <span class="news-date">[2024年1月]</span> 一篇论文被 <strong>ICLR 2024</strong> 接收！
+                </div>
+                <div class="news-item">
+                  <span class="news-date">[2023年10月]</span> 一篇论文被 <strong><em>Transactions on Machine Learning Research</em> (TMLR)</strong> 接收！
+                </div>
+
+                <!-- 折叠的新闻 -->
+                <div id="moreNews" class="collapsed-news">
+                  <div class="news-item">
+                    <span class="news-date">[2023年9月]</span> 一篇论文被 <strong>NeurIPS 2023</strong> 接收！
+                  </div>
+                  <div class="news-item">
+                    <span class="news-date">[2023年6月]</span> 一篇论文被 <strong>MICCAI 2023</strong> 接收！
+                  </div>
+                </div>
+
+                <!-- 展开更多按钮 -->
+                <button class="show-more-btn" onclick="toggleNews()">
+                  <span id="showMoreText">展开更多</span>
+                  <svg id="showMoreIcon" class="chevron-icon" viewBox="0 0 24 24" width="16" height="16">
+                    <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+        </section>
+
+        <!-- 期刊论文部分 -->
+        <section id="journal">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <heading>期刊论文</heading>
+          </td>
+        </tr>
+      </tbody></table>
+
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <!-- NPJ Digital Medicine 2026 BrainMIND -->
+        <tr>
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <img src='images/brainmind-npj.svg' width="160">
+            </div>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://www.nature.com/articles/s41746-026-02380-4">
+              <papertitle><span class="highlight">Evaluation of large language models for diagnostic impression generation from brain MRI report findings: a multicenter benchmark and reader study</span></papertitle>
+            </a>
+            <br>
+            Ming-Liang Wang*, <strong>Rui-Peng Zhang*</strong>, Wen-Juan Wu, Yu Lu, Xiao-Er Wei, Zheng Sun, Bao-Hui Guan, Jun-Jie Zhang, Xue Wu, Lei Zhang, Tian-Le Wang, Yue-Hua Li.
+            <br>
+            <em>npj Digital Medicine</em>, 2026
+            <div class="venue-tags">
+              <span class="tag tag-jcr">JCR Q1</span>
+              <span class="tag tag-cas">中科院医学一区 Top</span>
+              <span class="tag tag-if">IF 15.2</span>
+            </div>
+            <a href="https://www.nature.com/articles/s41746-026-02380-4">pdf</a> |
+            <a href="https://github.com/FrankZhangRp/BrainMIND">code</a> |
+            <a href="data/npj-brainmind.bib">bibtex</a>
+          </td>
+        </tr>
+
+        <!-- FITEE 2024 FFT-GP -->
+        <tr>
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <img src='images/fftgp.png' width="160", height="80">
+            </div>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://link.springer.com/article/10.1631/FITEE.2400279">
+              <papertitle>Fairness-guided federated training for generalization and personalization in cross-silo federated learning</papertitle>
+            </a>
+            <br>
+            <strong>Ruipeng Zhang</strong>, Ziqing Fan, Jiangchao Yao, Ya Zhang, Yanfeng Wang.
+            <br>
+            <em>Frontiers of Information Technology & Electronic Engineering</em>, 2024
+            <div class="venue-tags">
+              <span class="tag tag-ccf-c">CCF-C</span>
+              <span class="tag tag-jcr">JCR Q3</span>
+              <span class="tag tag-cas">中科院四区</span>
+              <span class="tag tag-if">IF 2.7</span>
+            </div>
+            <br>
+            <a href="https://link.springer.com/article/10.1631/FITEE.2400279">pdf</a> |
+            <a href="data/ftiee2024_fftgp.ris">bibtex</a>
+          </td>
+        </tr>
+
+        <!-- TMI 2024 UniChest -->
+        <tr>
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <img src='images/unichest.png' width="160", height="80">
+            </div>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://tianjiedai.github.io/unichest/">
+              <papertitle><span class="highlight">UniChest: Conquer-and-Divide Pre-training for Multi-Source Chest X-Ray Classification</span></papertitle>
+            </a>
+            <br>
+            Tianjie Dai, <strong>Ruipeng Zhang</strong>, Feng Hong, Jiangchao Yao, Ya Zhang, Yanfeng Wang.
+            <br>
+            <em>IEEE Transactions on Medical Imaging</em>, 2024
+            <div class="venue-tags">
+              <span class="tag tag-ccf-b">CCF-B</span>
+              <span class="tag tag-jcr">JCR Q1</span>
+              <span class="tag tag-cas">中科院医学一区 Top</span>
+              <span class="tag tag-if">IF 10.6</span>
+            </div>
+            <br>
+            <a href="https://tianjiedai.github.io/unichest/">pdf</a> |
+            <a href="https://github.com/Elfenreigen/UniChest">code</a> |
+            <a href="https://tianjiedai.github.io/unichest/">project page</a> |
+            <a href="https://tianjiedai.github.io/unichest/resources/bibtex.txt">bibtex</a>
+          </td>
+        </tr>
+
+        <!-- TMM 2023 FADH -->
+        <tr>
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <img src='images/fadh.jpg' width="160", height="80">
+            </div>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://ieeexplore.ieee.org/abstract/document/10073578/">
+              <papertitle><span class="highlight">Federated Adversarial Domain Hallucination for Privacy-preserving Domain Generalization</span></papertitle>
+            </a>
+            <br>
+            Qinwei Xu, <strong>Ruipeng Zhang</strong>, Ya Zhang, Yi-Yan Wu, Yanfeng Wang.
+            <br>
+            <em>IEEE Transactions on Multimedia</em>, 2023
+            <div class="venue-tags">
+              <span class="tag tag-ccf-b">CCF-B</span>
+              <span class="tag tag-jcr">JCR Q1</span>
+              <span class="tag tag-cas">中科院一区</span>
+              <span class="tag tag-if">IF 8.4</span>
+            </div>
+            <br>
+            <a href="https://ieeexplore.ieee.org/abstract/document/10073578/">pdf</a> |
+            <a href="data/tmm2023_fadh.bib">bibtex</a>
+          </td>
+        </tr>
+
+        <!-- PR 2023 FACT+extension -->
+        <tr>
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <img src='images/fact-pr.jpg' width="160", height="80">
+            </div>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://www.sciencedirect.com/science/article/pii/S0031320323001747">
+              <papertitle>Fourier-based augmentation with applications to domain generalization</papertitle>
+            </a>
+            <br>
+            Qinwei Xu, <strong>Ruipeng Zhang</strong>, Ziqing Fan, Yanfeng Wang, Yi-Yan Wu, Ya Zhang.
+            <br>
+            <em>Pattern Recognition</em>, 2023
+            <div class="venue-tags">
+              <span class="tag tag-ccf-b">CCF-B</span>
+              <span class="tag tag-jcr">JCR Q1</span>
+              <span class="tag tag-cas">中科院一区</span>
+              <span class="tag tag-if">IF 7.5</span>
+            </div>
+            <br>
+            <a href="https://www.sciencedirect.com/science/article/pii/S0031320323001747">pdf</a> |
+            <a href="data/pr2023_fact.bib">bibtex</a>
+          </td>
+        </tr>
+
+      </tbody></table>
+      </section>
+
+        <!-- 会议论文部分 -->
+        <section id="conference">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <heading>会议论文</heading>
+          </td>
+        </tr>
+      </tbody></table>
+
+
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <!-- ICLR 2024 -->
+        <tr>
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <img src='images/DISAM.png' width="160", height="80">
+            </div>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://openreview.net/forum?id=I4wB3HA3dJ">
+              <papertitle><span class="highlight">Domain-Inspired Sharpness-Aware Minimization Under Domain Shifts</span></papertitle>
+            </a>
+            <br>
+            <strong>Ruipeng Zhang</strong>, Ziqing Fan, Jiangchao Yao*, Ya Zhang, Yanfeng Wang*.
+            <br>
+            <em>The Twelfth International Conference on Learning Representations (ICLR)</em>, 2024
+            <div class="venue-tags">
+              <span class="tag tag-ccf-a">CCF-A</span>
+            </div>
+            <br>
+            <a href="https://github.com/MediaBrain-SJTU/DISAM">project page</a> |
+            <a href="https://openreview.net/pdf?id=I4wB3HA3dJ">pdf</a> |
+            <a href="data/iclr2024_disam.bib">bibtex</a>
+          </td>
+        </tr>
+
+        <!-- MICCAI 2023 -->
+        <tr onmouseout="miccai2023_stop()" onmouseover="miccai2023_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id='miccai2023_image'>
+                <img src='images/grace-ours.png' width="160"></div>
+              <img src='images/grace-total.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function miccai2023_start() {
+                document.getElementById('miccai2023_image').style.opacity = "1";
+              }
+
+              function miccai2023_stop() {
+                document.getElementById('miccai2023_image').style.opacity = "0";
+              }
+              miccai2023_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://github.com/MediaBrain-SJTU/GPFL-GRACE">
+              <papertitle><span class="highlight">GRACE: Enhancing Federated Learning for Medical Imaging with Generalized and Personalized Gradient Correction</span></papertitle>
+            </a>
+            <br>
+            <strong>Ruipeng Zhang</strong>, Ziqing Fan, Qinwei Xu, Jiangchao Yao*, Ya Zhang*, Yanfeng Wang*.
+            <br>
+            <em>International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) </em>, 2023
+            <div class="venue-tags">
+              <span class="tag tag-ccf-b">CCF-B</span>
+            </div>
+            <br>
+            <a href="https://github.com/MediaBrain-SJTU/GPFL-GRACE">project page</a> |
+            <a href="https://link.springer.com/chapter/10.1007/978-3-031-43898-1_2">pdf</a> |
+            <a href="data/miccai2023_grace.bib">bibtex</a>
+          </td>
+        </tr>
+      <!-- </tbody></table> -->
+
+            <!-- CVPR 2023 FedDG -->
+            <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody></tbody> -->
+              <tr>
+                <td style="padding: 20px; width:25%; vertical-align: middle">
+                  <div class="one">
+                    <img src="images/FedDG-GA.png" width="160" height="80">
+                  </div>
+                </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <a href="https://github.com/MediaBrain-SJTU/FedDG-GA">
+                  <papertitle><span class="highlight">Federated Domain Generalization with Generalization Adjustment</span></papertitle>
+                </a>
+                <br>
+                <strong>Ruipeng Zhang</strong>, Qinwei Xu, Jiangchao Yao, Ya Zhang*, Qi Tian, Yanfeng Wang*.
+                <br>
+                <em>IEEE/CVF Computer Vision and Pattern Recognition Conference (CVPR)</em>, 2023
+                <div class="venue-tags">
+                  <span class="tag tag-ccf-a">CCF-A</span>
+                </div>
+                <br>
+                <a href="https://github.com/MediaBrain-SJTU/FedDG-GA">project page</a> |
+                <a href="https://www.bilibili.com/video/BV1Po4y137Pn/?vd_source=f609ec779c874a09ed3a9526d55c1f98">video</a> |
+                <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Federated_Domain_Generalization_With_Generalization_Adjustment_CVPR_2023_paper.pdf">pdf</a> |
+                <a href="https://openaccess.thecvf.com/content/CVPR2023/supplemental/Zhang_Federated_Domain_Generalization_CVPR_2023_supplemental.pdf">supp</a> |
+                <a href="data/cvpr2023_feddg.bib">bibtex</a>
+              </td>
+            </tr>
+          <!-- </tbody></table> -->
+
+
+          <!-- NeurIPS 2023 FedGELA -->
+            <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody></tbody> -->
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <img src='images/neurips2023_fedgela.jpg' width="80", height="80"><img src='images/neurips2023_fedgela.jpg' width="80", height="80">
+                  </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://openreview.net/forum?id=wwmKVO8bsR">
+                    <papertitle><span class="highlight">Federated Learning with Bilateral Curation for Partially Class-Disjoint Data</span></papertitle>
+                  </a>
+                  <br>
+                  Ziqing Fan, <strong>Ruipeng Zhang</strong>, Jiangchao Yao*, Bo Han, Ya Zhang, Yanfeng Wang*.
+                  <br>
+                  <em>Thirty-seventh Conference on Neural Information Processing Systems (NeurIPS)</em>, 2023
+                  <div class="venue-tags">
+                    <span class="tag tag-ccf-a">CCF-A</span>
+                  </div>
+                  <br>
+                  <a href="https://github.com/MediaBrain-SJTU/FedGELA">project page</a> |
+                  <!-- <a href="https://github.com/MediaBrain-SJTU/FedDG-GA/imgs/FedDG-new-5120.png">poster</a> |  -->
+                  <!-- <a href="https://www.bilibili.com/video/BV1Po4y137Pn/?vd_source=f609ec779c874a09ed3a9526d55c1f98">video</a> |  -->
+                  <a href="https://openreview.net/pdf?id=wwmKVO8bsR">pdf</a> |
+                  <!-- <a href="https://openaccess.thecvf.com/content/CVPR2023/supplemental/Zhang_Federated_Domain_Generalization_CVPR_2023_supplemental.pdf">supp</a> |  -->
+                  <a href="data/neurips2023_fedgela.bib">bibtex</a>
+                </td>
+              </tr>
+
+
+            <!-- ISBI 2022 SemiDG -->
+            <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody></tbody> -->
+              <tr onmouseout="isbi2022_stop()" onmouseover="isbi2022_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='isbi2022_image'>
+                      <img src='images/isbi2022.png' width="160", height="80"></div>
+                    <img src='images/isbi2022_2.jpg' width="160", height="80">
+                  </div>
+                  <script type="text/javascript">
+                    function isbi2022_start() {
+                      document.getElementById('isbi2022_image').style.opacity = "1";
+                    }
+
+                    function isbi2022_stop() {
+                      document.getElementById('isbi2022_image').style.opacity = "0";
+                    }
+                    isbi2022_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://ieeexplore.ieee.org/abstract/document/9761561">
+                    <papertitle>Semi-Supervised Domain Generalization for Medical Image Analysis</papertitle>
+                  </a>
+                  <br>
+                  <strong>Ruipeng Zhang</strong>, Qinwei Xu, Chaoqing Huang, Ya Zhang*, Yanfeng Wang.
+                  <br>
+                  <em>IEEE International Symposium on Biomedical Imaging (ISBI) </em>, 2022
+                  <br>
+                  <a href="data/ISBI poster.pdf">poster</a> |
+                  <a href="data/ISBIvideo.mp4">video</a> |
+                  <a href="https://ieeexplore.ieee.org/abstract/document/9761561">pdf</a> |
+                  <a href="data/isbi2022_semidg.bib">bibtex</a>
+                </td>
+              </tr>
+
+            <!-- CVPR 2021 FACT -->
+            <tr onmouseout="cvpr2021_stop()" onmouseover="cvpr2021_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='cvpr2021_image'>
+                    <img src='images/fact.jpg' width="160", height="80"></div>
+                  <img src='images/fact2.jpg' width="160", height="80">
+                </div>
+                <script type="text/javascript">
+                  function cvpr2021_start() {
+                    document.getElementById('cvpr2021_image').style.opacity = "1";
+                  }
+
+                  function cvpr2021_stop() {
+                    document.getElementById('cvpr2021_image').style.opacity = "0";
+                  }
+                  cvpr2021_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <a href="https://github.com/MediaBrain-SJTU/FACT">
+                  <papertitle><span class="highlight">A Fourier-based Framework for Domain Generalization</span></papertitle>
+                </a>
+                <br>
+                Qinwei Xu, <strong>Ruipeng Zhang</strong>, Ya Zhang, Yanfeng Wang, Qi Tian.
+                <br>
+                <em>IEEE/CVF Computer Vision and Pattern Recognition Conference (CVPR)</em>, 2021
+                <div class="venue-tags">
+                  <span class="tag tag-ccf-a">CCF-A</span>
+                </div>
+                <br>
+                <a href="https://github.com/MediaBrain-SJTU/FACT">project page</a> |
+                <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xu_A_Fourier-Based_Framework_for_Domain_Generalization_CVPR_2021_paper.pdf">pdf</a> |
+                <a href="https://openaccess.thecvf.com/content/CVPR2021/supplemental/Xu_A_Fourier-Based_Framework_CVPR_2021_supplemental.pdf">supp</a> |
+                <a href="data/cvpr2021_fact.bib">bibtex</a>
+              </td>
+            </tr>
+
+            <!-- CVPRW 2023 SimDE-->
+            <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody></tbody> -->
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <img src='images/simde.jpg' width="160", height="80">
+                  </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://openaccess.thecvf.com/content/CVPR2023W/L3D-IVU/papers/Xu_SimDE_A_Simple_Domain_Expansion_Approach_for_Single-Source_Domain_Generalization_CVPRW_2023_paper.pdf">
+                    <papertitle>SimDE: A Simple Domain Expansion Approach for Single-Source Domain Generalization</papertitle>
+                  </a>
+                  <br>
+                  Qinwei Xu, <strong>Ruipeng Zhang</strong>, Yi-Yan Wu, Ya Zhang, Ning Liu, Yanfeng Wang.
+                  <br>
+                  <em>IEEE/CVF Computer Vision and Pattern Recognition Conference Workshops (CVPRW)</em>, 2023
+                  <div class="venue-tags">
+                    <span class="tag tag-venue">Workshop</span>
+                  </div>
+                  <br>
+                  <a href="https://openaccess.thecvf.com/content/CVPR2023W/L3D-IVU/papers/Xu_SimDE_A_Simple_Domain_Expansion_Approach_for_Single-Source_Domain_Generalization_CVPRW_2023_paper.pdf">pdf</a> |
+                  <a href="https://openaccess.thecvf.com/content/CVPR2023W/L3D-IVU/supplemental/Xu_SimDE_A_Simple_CVPRW_2023_supplemental.pdf">supp</a> |
+                  <a href="data/cvpr2023_simde.bib">bibtex</a>
+                </td>
+              </tr>
+            <!-- </tbody></table> -->
+
+            <!-- ECCV 2022  -->
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <img src='images/dcn.jpg' width="160", height="80">
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-25085-9_17">
+                  <papertitle>Domain-Conditioned Normalization for Test-Time Domain Generalization</papertitle>
+                </a>
+                <br>
+                Yuxuan Jiang, Yanfeng Wang, <strong>Ruipeng Zhang</strong>, Qinwei Xu, Ya Zhang, Xin Chen, Qi Tian.
+                <br>
+                <em>European Conference on Computer Vision Workshops (ECCVW) </em>, 2022
+                <div class="venue-tags">
+                  <span class="tag tag-venue">Workshop</span>
+                  <span class="tag tag-award">🏆 最佳长文奖</span>
+                </div>
+                <br>
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-25085-9_17">pdf</a> |
+                <a href="data/eccv2022_dcn.bib">bibtex</a>
+              </td>
+            </tr>
+
+
+
+          </tbody></table>
+      </section>
+
+      <!-- 获奖部分 -->
+      <section id="awards">
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <heading>荣誉奖项</heading>
+            <ul>
+              <li> [2023.12] 上海交通大学研究生优秀奖学金</li>
+              <li> [2022.10] <a href="https://conferences.miccai.org/2022/en/">MICCAI 2022</a> 的<a href="https://breastdensityfl.acr.org/">Breast density FL: ACR-NCI-NVIDIA Breast Density Federated Learning Challenge</a> 算法挑战赛<b>全球亚军</b> </li>
+              <li> [2019.09] 入选吴文俊人工智能荣誉博士班</li>
+              <li> [2017.12] 电子科技大学人民一等奖学金</li>
+              <li> [2017.06] 电子科技大学数学建模竞赛二等奖</li>
+              <li> [2016.12] 电子科技大学人民一等奖学金</li>
+              <li> [2016.10] 电子科技大学社会实践优秀个人</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+      </section>
+
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+      <!-- 学术服务部分 -->
+      <section id="services">
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+        <td style="padding:20px;width:100%;vertical-align:middle">
+          <heading>学术服务</heading>
+          <ul>
+              <li>学术会议审稿人：MICCAI 2022, MICCAI 2023, ISBI 2024, MICCAI 2024, NeurIPS 2024, ICLR 2025</li>
+              <li>期刊审稿人：IEEE Transactions on Circuits and Systems for Video Technology, Pattern Recognition, IEEE Journal of Biomedical and Health Informatics, IEEE Transactions on Cognitive and Developmental Systems, IEEE Transactions on Industrial Informatics, IEEE Transactions on Knowledge and Data Engineering</li>
+
+          </ul>
+        </td>
+      </tr>
+    </tbody></table>
+    </section>
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      </td>
+    </tr>
+  </table>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <p>
+      <a href="mailto:zhangrp@sjtu.edu.cn">邮箱</a> &nbsp;·&nbsp;
+      <a href="https://scholar.google.com/citations?user=m7RzJxwAAAAJ&hl=zh-CN">谷歌学术</a> &nbsp;·&nbsp;
+      <a href="https://github.com/FrankZhangRp/">Github</a>
+    </p>
+    <p>© 2026 张瑞鹏 &nbsp;·&nbsp; 最后更新于 2026 年 6 月</p>
+    <p>网页模板改编自 <a href="https://jonbarron.info/">Jon Barron</a>。</p>
+  </footer>
+
+  <!-- JavaScript for News Toggle -->
+  <script>
+    function toggleNews() {
+      var moreNews = document.getElementById('moreNews');
+      var showMoreText = document.getElementById('showMoreText');
+      var showMoreIcon = document.getElementById('showMoreIcon');
+
+      if (moreNews.classList.contains('show')) {
+        moreNews.classList.remove('show');
+        showMoreText.textContent = '展开更多';
+        showMoreIcon.style.transform = 'rotate(0deg)';
+      } else {
+        moreNews.classList.add('show');
+        showMoreText.textContent = '收起';
+        showMoreIcon.style.transform = 'rotate(180deg)';
+      }
+    }
+  </script>
+
+  <!-- 滚动高亮当前导航 -->
+  <script>
+    (function () {
+      var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+      var sections = [];
+      navLinks.forEach(function (link) {
+        var id = link.getAttribute('href').slice(1);
+        var sec = document.getElementById(id);
+        if (sec) sections.push({ link: link, sec: sec });
+      });
+      if (!('IntersectionObserver' in window) || !sections.length) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach(function (l) { l.classList.remove('active'); });
+          var match = sections.filter(function (s) { return s.sec === entry.target; })[0];
+          if (match) match.link.classList.add('active');
+        });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+      sections.forEach(function (s) { observer.observe(s.sec); });
+    })();
+  </script>
+</body>
+
+</html>
