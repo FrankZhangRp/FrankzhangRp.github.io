@@ -214,6 +214,20 @@
     .nav__link.active { background: var(--blue-600); color: #fff; }
     .nav__link.active:hover { color: #fff; }
 
+    /* Lab button */
+    .nav__link--lab {
+      padding: 6px 16px; font-size: 0.8rem; font-weight: 600;
+      color: #fff; border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue-600), #7c3aed);
+      transition: all 0.25s; letter-spacing: 0.02em;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.25);
+    }
+    .nav__link--lab:hover {
+      background: linear-gradient(135deg, #1d4ed8, #6d28d9);
+      color: #fff; transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(37,99,235,0.35);
+    }
+
     /* Theme toggle */
     .nav__theme-btn {
       background: none; border: none; cursor: pointer;
@@ -633,7 +647,7 @@
       <span class="nav__brand">Zhang Ruipeng</span>
       <div class="nav__links">
         <a href="#about" class="nav__link">About</a>
-        <a href="./team.html" class="nav__link">Team</a>
+        <a href="./team.html" class="nav__link--lab">AI4Rad Lab</a>
         <a href="#news" class="nav__link">News</a>
         <a href="#journal" class="nav__link">Journal</a>
         <a href="#conference" class="nav__link">Conference</a>
@@ -650,9 +664,9 @@
     <section id="about" class="profile reveal">
       <div>
         <h1 class="profile__name">Zhang Ruipeng</h1>
-        <p class="profile__title">Assistant Researcher · Shanghai Sixth People's Hospital</p>
+        <p class="profile__title">PI, AI4Rad Lab &middot; Assistant Researcher &middot; Shanghai Sixth People's Hospital</p>
         <p class="profile__bio">
-          Assistant Researcher, Department of Radiology, <strong>Shanghai Sixth People's Hospital</strong>, Shanghai Jiao Tong University School of Medicine. Ph.D. in Information and Communication Engineering from <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a> (2024), supervised by <a href="https://mediabrain.sjtu.edu.cn/yazhang/">Prof. Ya Zhang</a> in the <a href="https://mediabrain.sjtu.edu.cn/">MediaBrain Lab</a>.
+          Principal Investigator, <strong>AI4Rad Lab</strong> &middot; Assistant Researcher, Department of Radiology, <strong>Shanghai Sixth People's Hospital</strong>, Shanghai Jiao Tong University School of Medicine. Ph.D. in Information and Communication Engineering from <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a> (2024), supervised by <a href="https://mediabrain.sjtu.edu.cn/yazhang/">Prof. Ya Zhang</a> in the <a href="https://mediabrain.sjtu.edu.cn/">MediaBrain Lab</a>. Research focuses on <strong>medical vision-language models</strong> and <strong>cross-distribution generalization</strong> of AI on clinical data.
         </p>
         <div class="contact-row">
           <a href="mailto:zhangrp@sjtu.edu.cn" class="contact-link">
