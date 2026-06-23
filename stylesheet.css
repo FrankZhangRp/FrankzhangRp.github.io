@@ -250,6 +250,16 @@ papertitle {
   font-size: 0.875rem;
 }
 
+.scholar-metrics {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.scholar-metrics strong {
+  color: var(--primary-color);
+}
+
 #citationChart {
   width: 100%;
   height: 150px;
@@ -403,6 +413,52 @@ span.highlight {
   padding: 0.125rem 0.5rem;
   border-radius: var(--radius-sm);
   font-weight: 600;
+}
+
+/* Venue / classification tags */
+.venue-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0.15rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.6rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.tag-ccf-a { background: #fde8e8; color: #c0322b; }
+.tag-ccf-b { background: #fef0e0; color: #b45309; }
+.tag-ccf-c { background: #e8edff; color: #3f51b5; }
+.tag-jcr   { background: #e7f6ec; color: #1a7a3c; }
+.tag-cas   { background: #e2f3f0; color: #0f766e; }
+.tag-if    { background: #eef4ff; color: #1d4ed8; border: 1px solid #c7d7fe; }
+.tag-venue { background: #f1f3f5; color: #5a6472; }
+.tag-award { background: #fef9c3; color: #a16207; }
+
+/* Typography polish */
+body {
+  font-feature-settings: "kern", "liga", "tnum";
+  text-rendering: optimizeLegibility;
+}
+
+papertitle {
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+}
+
+/* Tighter, more readable paper meta lines (author / venue cells) */
+td[style*="width:75%"] {
+  line-height: 1.55;
 }
 
 /* Paper Links */
@@ -607,6 +663,36 @@ ul li::before {
   .collapsed-news {
     max-height: none;
     opacity: 1;
+  }
+}
+
+/* Footer */
+.site-footer {
+  max-width: 800px;
+  margin: 0.5rem auto 2.5rem;
+  padding: 1.5rem 2rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.site-footer p {
+  margin: 0.35rem 0;
+  color: var(--text-muted);
+}
+
+.site-footer a {
+  color: var(--text-muted);
+}
+
+.site-footer a:hover {
+  color: var(--primary-color);
+}
+
+@media (min-width: 1200px) {
+  .site-footer {
+    max-width: 900px;
   }
 }
 
